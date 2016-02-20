@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5801B1861C7629D100709412 /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5801B1841C7629D100709412 /* ToDoListTableViewController.swift */; };
+		5801B1871C7629D100709412 /* ToDoListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5801B1851C7629D100709412 /* ToDoListTableViewController.xib */; };
 		5832D8E21C745E1A00FCBFD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832D8E11C745E1A00FCBFD5 /* AppDelegate.swift */; };
-		5832D8E41C745E1A00FCBFD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832D8E31C745E1A00FCBFD5 /* ViewController.swift */; };
+		5832D8E41C745E1A00FCBFD5 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832D8E31C745E1A00FCBFD5 /* CalendarViewController.swift */; };
 		5832D8E71C745E1A00FCBFD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5832D8E51C745E1A00FCBFD5 /* Main.storyboard */; };
 		5832D8E91C745E1A00FCBFD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5832D8E81C745E1A00FCBFD5 /* Assets.xcassets */; };
 		5832D8EC1C745E1A00FCBFD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5832D8EA1C745E1A00FCBFD5 /* LaunchScreen.storyboard */; };
@@ -34,9 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5801B1841C7629D100709412 /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
+		5801B1851C7629D100709412 /* ToDoListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoListTableViewController.xib; sourceTree = "<group>"; };
 		5832D8DE1C745E1A00FCBFD5 /* Original.LifeManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Original.LifeManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5832D8E11C745E1A00FCBFD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5832D8E31C745E1A00FCBFD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5832D8E31C745E1A00FCBFD5 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		5832D8E61C745E1A00FCBFD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5832D8E81C745E1A00FCBFD5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5832D8EB1C745E1A00FCBFD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -77,6 +81,8 @@
 		5832D8D51C745E1A00FCBFD5 = {
 			isa = PBXGroup;
 			children = (
+				5801B1841C7629D100709412 /* ToDoListTableViewController.swift */,
+				5801B1851C7629D100709412 /* ToDoListTableViewController.xib */,
 				5832D8E01C745E1A00FCBFD5 /* Original.LifeManager */,
 				5832D8F51C745E1B00FCBFD5 /* Original.LifeManagerTests */,
 				5832D9001C745E1B00FCBFD5 /* Original.LifeManagerUITests */,
@@ -98,7 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				5832D8E11C745E1A00FCBFD5 /* AppDelegate.swift */,
-				5832D8E31C745E1A00FCBFD5 /* ViewController.swift */,
+				5832D8E31C745E1A00FCBFD5 /* CalendarViewController.swift */,
 				5832D8E51C745E1A00FCBFD5 /* Main.storyboard */,
 				5832D8E81C745E1A00FCBFD5 /* Assets.xcassets */,
 				5832D8EA1C745E1A00FCBFD5 /* LaunchScreen.storyboard */,
@@ -233,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5832D8EC1C745E1A00FCBFD5 /* LaunchScreen.storyboard in Resources */,
+				5801B1871C7629D100709412 /* ToDoListTableViewController.xib in Resources */,
 				5832D8E91C745E1A00FCBFD5 /* Assets.xcassets in Resources */,
 				5832D8E71C745E1A00FCBFD5 /* Main.storyboard in Resources */,
 			);
@@ -259,8 +266,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5832D8E41C745E1A00FCBFD5 /* ViewController.swift in Sources */,
+				5832D8E41C745E1A00FCBFD5 /* CalendarViewController.swift in Sources */,
 				5832D8E21C745E1A00FCBFD5 /* AppDelegate.swift in Sources */,
+				5801B1861C7629D100709412 /* ToDoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +493,7 @@
 				5832D9081C745E1B00FCBFD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5832D9091C745E1B00FCBFD5 /* Build configuration list for PBXNativeTarget "Original.LifeManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +502,7 @@
 				5832D90B1C745E1B00FCBFD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5832D90C1C745E1B00FCBFD5 /* Build configuration list for PBXNativeTarget "Original.LifeManagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +511,7 @@
 				5832D90E1C745E1B00FCBFD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
