@@ -35,17 +35,17 @@ class ToDoTableViewController: UITableViewController , UITableViewDataSource , U
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-//セクションの数を設定する。
+//セクションの数を設定する
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-//セルの個数を指定する。
+//セルの個数を指定する
     override func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         return wordArray.count
     }
-//セルの中身の表示の仕方を設定する。
+//セルの中身の表示の仕方を設定する
     override func tableVew(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath:indexPath) as!ListTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("todocell", forIndexPath:indexPath) as!ToDoTableViewCell
 //        let nowIndexPathDictionary: (AnyObject) = wordArray[indexPath.row]
 //        
 //        cell.todoLabel.text = now
@@ -70,14 +70,20 @@ class ToDoTableViewController: UITableViewController , UITableViewDataSource , U
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
+    
+    
+//ボタンを押した時の移動
+    @IBAction func plusButton() {
+        
     }
 
     /*

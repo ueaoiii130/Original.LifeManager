@@ -59,7 +59,7 @@ class ViewController: UIViewController {
 //        
 //        //現在起動中のデバイスを取得（スクリーンの幅・高さ）
         let screenWidth  = selfwide.screenWidth()
-        let screenHeight = DeviseSize.screenHeight()
+        let screenHeight = selfsize.screenHeight()
         
         //iPhone4s
         if(screenWidth == 320 && screenHeight == 480){

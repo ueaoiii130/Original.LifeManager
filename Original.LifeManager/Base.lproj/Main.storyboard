@@ -56,16 +56,22 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="ToDoList" id="5Co-cI-5Cz">
-                        <barButtonItem key="leftBarButtonItem" title="カレンダー" id="g7j-yM-2Ut"/>
+                        <barButtonItem key="leftBarButtonItem" title="カレンダー" id="g7j-yM-2Ut">
+                            <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Do!" id="Oim-cg-ZAc"/>
+                            <barButtonItem title="→" id="Oim-cg-ZAc">
+                                <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
                             <barButtonItem title="＋" id="Ld5-SR-Kkm">
+                                <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="ZAy-UI-Yt5" kind="push" id="gwZ-z0-ovQ"/>
                                 </connections>
@@ -80,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mP-Nv-j5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738.5" y="349.5"/>
+            <point key="canvasLocation" x="738.5" y="343.5"/>
         </scene>
         <!--リスト追加-->
         <scene sceneID="dqu-3r-ZT6">
@@ -186,6 +192,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lzV-Rb-iWG"/>
+        <segue reference="XTU-Ga-0Ze"/>
     </inferredMetricsTieBreakers>
 </document>
