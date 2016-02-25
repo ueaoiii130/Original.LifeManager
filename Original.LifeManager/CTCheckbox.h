@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 CAPH. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+import <Foundation/Foundation.h>
+import <UIKit/UIKit.h>
 
 @interface CTCheckbox : UIControl
 

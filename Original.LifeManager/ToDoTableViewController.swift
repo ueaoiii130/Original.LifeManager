@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import CTCheckbox.h
 
-class ToDoTableViewController: UITableViewController , UITableViewDataSource , UITableViewDelegate{
+//class ToDoTableViewController: UITableViewController , UITableViewDataSource , UITableViewDelegate{
+class ToDoTableViewController: UITableViewController {
+    
     var wordArray: [AnyObject] = []
     let saveData = NSUserDefaults.standardUserDefaults()
     
-    @IBOutlet weak var tableView: UIView!
+//    @IBOutlet var tableView: UIView!
     
     @IBOutlet var plusButton: UIButton!
     @IBOutlet var backButton: UIButton!
@@ -44,19 +47,19 @@ class ToDoTableViewController: UITableViewController , UITableViewDataSource , U
         return wordArray.count
     }
 //セルの中身の表示の仕方を設定する
-    override func tableVew(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("todocell", forIndexPath:indexPath) as!ToDoTableViewCell
+//    override func tableVew(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCellWithIdentifier("todocell", forIndexPath:indexPath) as!ToDoTableViewCell
 //        let nowIndexPathDictionary: (AnyObject) = wordArray[indexPath.row]
 //        
 //        cell.todoLabel.text = now
-    }
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        if saveData.arrayForKey("SCHEDULE") != nil {
-            wordArray = saveData.arrayForKey("SCHEDULE")!
-        }
-        tableView.reloadData()
-    }
+//    }
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        if saveData.arrayForKey("SCHEDULE") != nil {
+//            wordArray = saveData.arrayForKey("SCHEDULE")!
+//        }
+//        tableView.reloadData()
+//    }
 //    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {let cell: UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Subtitle, reuseIdentifier: "todoCell")
     
 //        cell.textLabel?.text = texts[indexPath.row]
@@ -82,9 +85,98 @@ class ToDoTableViewController: UITableViewController , UITableViewDataSource , U
     
     
 //ボタンを押した時の移動
-    @IBAction func plusButton() {
+    @IBAction func plusButton(seque: UIStoryboardSegue) {
         
     }
+
+    @IBAction func calenderButton(seque: UIStoryboardSegue) {
+        
+    }
+    
+    @IBAction func doButton(seque: UIStoryboardSegue) {
+        
+    }
+    
+
+//チェックボックス挑戦
+    
+        // テーブルビュー
+//        var tableView: UITableView!
+    
+        // テーブルデータ
+        var tableData = [
+            "データ1",
+            "データ2",
+            "データ3",
+            "データ4",
+            "データ5",
+        ]
+        
+        // 選択中のセル
+        var selected = [
+            false,
+            false,
+            false,
+            false,
+            false,
+        ]
+        
+//        override func viewDidLoad() {
+//            super.viewDidLoad()
+            // Do any additional setup after loading the view, typically from a nib.
+            
+            let barHeight: CGFloat = UIApplication.sharedApplication().statusBarFrame.size.height
+            
+//            let displayWidth = self.view.frame.width
+//            let displayHeight = self.view.frame.height
+    
+//            tableView = UITableView(frame: CGRect(x:0, y:barHeight, width:displayWidth, height:displayHeight - barHeight))
+//            
+//            tableView.registerClass(CustomTableViewCell.self, forCellReuseIdentifier: "todoCell")
+    
+//            tableView.delegate = self
+//            tableView.dataSource = self
+//            
+//            self.view.addSubview(tableView)
+//        }
+    
+//        override func didReceiveMemoryWarning() {
+//            super.didReceiveMemoryWarning()
+            // Dispose of any resources that can be recreated.
+//        }
+
+    // tableviewのデリゲートメソッドの一部省略・・・
+        
+        // テーブルセルにデータをセットします
+        func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCellWithIdentifier("CustomTableViewCell", forIndexPath: indexPath) as! CustomTableViewCell
+            cell.textLabel?.text = tableData[indexPath.row]
+            
+            cell.checkbox.tag = indexPath.row
+            cell.checkbox.addTarget(self, action: "checked:", forControlEvents: .ValueChanged)
+            cell.setData()
+            return cell
+        }
+        
+        // ⭐️ここがポイント　セルの選択状態を保持します
+        func checked(sender:CTCheckbox) {
+            selected[sender.tag] = sender.checked
+        }
+
+    
+    class CustomTableViewCell: UITableViewCell
+    {
+        var checkbox = CTCheckbox()
+        
+        func setData() -> Void {
+            // ⭐️ここもポイント　チェックボックスを追加します
+            checkbox.frame = CGRectMake(self.frame.width - 44, 0, 22, self.frame.height)
+            checkbox.checkboxColor = UIColor.blackColor()
+            checkbox.checkboxSideLength = 22
+            self.addSubview(checkbox)
+        }
+    }
+    
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

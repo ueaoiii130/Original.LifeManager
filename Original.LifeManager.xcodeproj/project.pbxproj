@@ -56,8 +56,8 @@
 		589EC59F1C7994A00025F6C1 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		589EC5A01C7994A00025F6C1 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		589EC5A31C79997E0025F6C1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		589EC5A61C79A6EF0025F6C1 /* forcheckHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = forcheckHeader.h; sourceTree = "<group>"; };
-		589EC5A71C7A9FBA0025F6C1 /* CTCheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCheckbox.h; sourceTree = "<group>"; };
+		589EC5AA1C7EA3330025F6C1 /* CTCheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCheckbox.h; sourceTree = "<group>"; };
+		589EC5AB1C7EA4000025F6C1 /* CheckBoxBridgingHeader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CheckBoxBridgingHeader-Bridging-Header.h"; sourceTree = "<group>"; };
 		606FBA5A900E6D3040FF2952 /* Pods-Original.LifeManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Original.LifeManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Original.LifeManager/Pods-Original.LifeManager.debug.xcconfig"; sourceTree = "<group>"; };
 		76B446469F3D24D722B097DC /* Pods_Original_LifeManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Original_LifeManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2759C283600CE39BA2C11F7 /* Pods-Original.LifeManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Original.LifeManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-Original.LifeManager/Pods-Original.LifeManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,12 +124,12 @@
 		5832D8E01C745E1A00FCBFD5 /* Original.LifeManager */ = {
 			isa = PBXGroup;
 			children = (
-				589EC5A71C7A9FBA0025F6C1 /* CTCheckbox.h */,
 				589EC59D1C7992430025F6C1 /* ToDoTableViewController.swift */,
+				589EC5AA1C7EA3330025F6C1 /* CTCheckbox.h */,
+				589EC5AB1C7EA4000025F6C1 /* CheckBoxBridgingHeader-Bridging-Header.h */,
 				5832D8E11C745E1A00FCBFD5 /* AppDelegate.swift */,
 				5832D8E31C745E1A00FCBFD5 /* CalendarViewController.swift */,
 				589EC59F1C7994A00025F6C1 /* TableViewCell.swift */,
-				589EC5A61C79A6EF0025F6C1 /* forcheckHeader.h */,
 				589EC5A01C7994A00025F6C1 /* TableViewCell.xib */,
 				5832D8E51C745E1A00FCBFD5 /* Main.storyboard */,
 				5832D8E81C745E1A00FCBFD5 /* Assets.xcassets */,
@@ -500,6 +500,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.litech.Original-LifeManager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Original.LifeManagerBridgingHeader/CheckBoxBridgingHeader-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -512,6 +513,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.litech.Original-LifeManager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Original.LifeManagerBridgingHeader/CheckBoxBridgingHeader-Bridging-Header.h";
 			};
 			name = Release;
 		};
