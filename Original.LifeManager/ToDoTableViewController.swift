@@ -118,9 +118,13 @@ class ToDoTableViewController: UITableViewController {
 //            "データ5",
 //        ]
         // 選択中のセル
-        var selected = [
-                for 
-    ]
+//        var selected = [
+//    for (var index = numberOfRowsInSection section:Int) -> Int {
+////            println("\(name)です。")
+//    
+//    ]
+//    }
+    
     
 //        override func viewDidLoad() {
 //            super.viewDidLoad()
@@ -135,31 +139,16 @@ class ToDoTableViewController: UITableViewController {
 //            
 //            tableView.registerClass(CustomTableViewCell.self, forCellReuseIdentifier: "todoCell")
     
-//            tableView.delegate = self
-//            tableView.dataSource = self
-//            
-//            self.view.addSubview(tableView)
-//        }
-    
-//        override func didReceiveMemoryWarning() {
-//            super.didReceiveMemoryWarning()
-            // Dispose of any resources that can be recreated.
-//        }
-// tableviewのデリゲートメソッドの一部省略・・・
-        
-//        // テーブルセルにデータをセットします
-//        override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//            let cell = tableView.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath) as! ToDoTableViewCell
-//            cell.textLabel?.text = tableData[indexPath.row]
-//    
-//            cell.checkbox.tag = indexPath.row
-//            cell.checkbox.addTarget(self, action: "checked:", forControlEvents: .ValueChanged)
-//            cell.setData()
-//            return cell
-//        }
-//        
+
+//
         // ⭐️ここがポイント　セルの選択状態を保持します
+//    for in文で配列の数だけチェックボックス表示
         func checked(sender:CTCheckbox) {
+            var selected: [Bool] = []
+            for i in 0 ..< wordArray.count {
+                selected.append(false)
+            }
+            
             selected[sender.tag] = sender.checked
         }
 
@@ -176,60 +165,5 @@ class ToDoTableViewController: UITableViewController {
 }
     }
 
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
