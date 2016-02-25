@@ -12,8 +12,17 @@ import UIKit
 //
 class TableViewCell: UITableViewCell {
     
-
+    var checkbox = CTCheckbox()
     
+    func setData() -> Void {
+        // ⭐️ここもポイント　チェックボックスを追加します
+        checkbox.frame = CGRectMake(self.frame.width - 44, 0, 22, self.frame.height)
+        checkbox.checkboxColor = UIColor.blackColor()
+        checkbox.checkboxSideLength = 22
+        self.addSubview(checkbox)
+    }
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

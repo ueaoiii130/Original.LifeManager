@@ -32,7 +32,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="279.5" y="349.5"/>
+            <point key="canvasLocation" x="-82.5" y="343.5"/>
         </scene>
         <!--ToDoList-->
         <scene sceneID="HIw-Fh-XJP">
@@ -42,33 +42,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="todoCell" id="93K-hS-29l">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="93K-hS-29l" id="lcC-by-nV1">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQh-gj-AZV">
-                                            <rect key="frame" x="86" y="11" width="281" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="ToDoList" id="XV4-Ro-e1y">
                         <barButtonItem key="leftBarButtonItem" title="カレンダー" id="qnA-IJ-wIh">
                             <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="push" id="1sk-bE-WaN"/>
-                            </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="→" id="WdX-if-nTD">
@@ -76,6 +54,9 @@
                             </barButtonItem>
                             <barButtonItem title="＋" id="suz-36-X3R">
                                 <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <segue destination="ZAy-UI-Yt5" kind="push" id="7yS-da-T37"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -87,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mP-Nv-j5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="798.5" y="319.5"/>
+            <point key="canvasLocation" x="788.5" y="343.5"/>
         </scene>
         <!--リスト追加-->
         <scene sceneID="dqu-3r-ZT6">
@@ -133,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MAl-z3-oum" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1339.5" y="1026.5"/>
+            <point key="canvasLocation" x="1356.5" y="1193.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BCs-fb-jZr">
@@ -161,9 +142,6 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bg6-WX-tGy">
                                 <rect key="frame" x="14" y="20" width="45" height="30"/>
                                 <state key="normal" title="リスト"/>
-                                <connections>
-                                    <segue destination="h0Z-Ry-hTS" kind="show" id="tg2-ql-XGG"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -173,7 +151,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwE-FQ-mx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Rmg-nC-2ay" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1339.5" y="187.5"/>
+            <point key="canvasLocation" x="1334.5" y="343.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zzI-Sv-BGd">
@@ -192,10 +170,10 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDV-4O-bVB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="738.5" y="1090.5"/>
+            <point key="canvasLocation" x="352.5" y="343.5"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lzV-Rb-iWG"/>
+        <segue reference="XTU-Ga-0Ze"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import CTCheckbox.h
+import CTCheckbox
 
 //class ToDoTableViewController: UITableViewController , UITableViewDataSource , UITableViewDelegate{
 class ToDoTableViewController: UITableViewController {
@@ -15,11 +15,12 @@ class ToDoTableViewController: UITableViewController {
     var wordArray: [AnyObject] = []
     let saveData = NSUserDefaults.standardUserDefaults()
     
-//    @IBOutlet var tableView: UIView!
     
     @IBOutlet var plusButton: UIButton!
     @IBOutlet var backButton: UIButton!
     @IBOutlet var doButton: UIButton!
+    
+    var checkbox = CTCheckbox()
     
 
     override func viewDidLoad() {
@@ -46,6 +47,19 @@ class ToDoTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         return wordArray.count
     }
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath) as! ToDoTableViewCell
+        cell.textLabel?.text = tableData[indexPath.row]
+        
+        cell.checkbox.tag = indexPath.row
+        cell.checkbox.addTarget(self, action: "checked:", forControlEvents: .ValueChanged)
+        cell.setData()
+        return cell
+    }
+    
+
 //セルの中身の表示の仕方を設定する
 //    override func tableVew(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
 //        let cell = tableView.dequeueReusableCellWithIdentifier("todocell", forIndexPath:indexPath) as!ToDoTableViewCell
@@ -111,7 +125,6 @@ class ToDoTableViewController: UITableViewController {
             "データ4",
             "データ5",
         ]
-        
         // 選択中のセル
         var selected = [
             false,
@@ -120,7 +133,6 @@ class ToDoTableViewController: UITableViewController {
             false,
             false,
         ]
-        
 //        override func viewDidLoad() {
 //            super.viewDidLoad()
             // Do any additional setup after loading the view, typically from a nib.
@@ -144,39 +156,37 @@ class ToDoTableViewController: UITableViewController {
 //            super.didReceiveMemoryWarning()
             // Dispose of any resources that can be recreated.
 //        }
-
-    // tableviewのデリゲートメソッドの一部省略・・・
+// tableviewのデリゲートメソッドの一部省略・・・
         
-        // テーブルセルにデータをセットします
-        func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCellWithIdentifier("CustomTableViewCell", forIndexPath: indexPath) as! CustomTableViewCell
-            cell.textLabel?.text = tableData[indexPath.row]
-            
-            cell.checkbox.tag = indexPath.row
-            cell.checkbox.addTarget(self, action: "checked:", forControlEvents: .ValueChanged)
-            cell.setData()
-            return cell
-        }
-        
+//        // テーブルセルにデータをセットします
+//        override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//            let cell = tableView.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath) as! ToDoTableViewCell
+//            cell.textLabel?.text = tableData[indexPath.row]
+//    
+//            cell.checkbox.tag = indexPath.row
+//            cell.checkbox.addTarget(self, action: "checked:", forControlEvents: .ValueChanged)
+//            cell.setData()
+//            return cell
+//        }
+//        
         // ⭐️ここがポイント　セルの選択状態を保持します
         func checked(sender:CTCheckbox) {
             selected[sender.tag] = sender.checked
         }
 
     
-    class CustomTableViewCell: UITableViewCell
-    {
-        var checkbox = CTCheckbox()
-        
-        func setData() -> Void {
-            // ⭐️ここもポイント　チェックボックスを追加します
-            checkbox.frame = CGRectMake(self.frame.width - 44, 0, 22, self.frame.height)
-            checkbox.checkboxColor = UIColor.blackColor()
-            checkbox.checkboxSideLength = 22
-            self.addSubview(checkbox)
-        }
-    }
-    
+//    class CustomTableViewCell: UITableViewCell{
+////        var checkbox = CTCheckbox()
+//    
+//        func setData() -> Void {
+//            // ⭐️ここもポイント　チェックボックスを追加します
+//            checkbox.frame = CGRectMake(self.frame.width - 44, 0, 22, self.frame.height)
+//            checkbox.checkboxColor = UIColor.blackColor()
+//            checkbox.checkboxSideLength = 22
+//            self.addSubview(checkbox)
+//        }
+}
+
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -233,4 +243,3 @@ class ToDoTableViewController: UITableViewController {
     }
     */
 
-}
