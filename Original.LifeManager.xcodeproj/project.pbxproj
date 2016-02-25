@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5801B1861C7629D100709412 /* ToDoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5801B1841C7629D100709412 /* ToDoListTableViewController.swift */; };
-		5801B1871C7629D100709412 /* ToDoListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5801B1851C7629D100709412 /* ToDoListTableViewController.xib */; };
+		30C5A4EE238F19829137DDC6 /* Pods_Original_LifeManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B446469F3D24D722B097DC /* Pods_Original_LifeManager.framework */; };
 		5832D8E21C745E1A00FCBFD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832D8E11C745E1A00FCBFD5 /* AppDelegate.swift */; };
 		5832D8E41C745E1A00FCBFD5 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832D8E31C745E1A00FCBFD5 /* CalendarViewController.swift */; };
 		5832D8E71C745E1A00FCBFD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5832D8E51C745E1A00FCBFD5 /* Main.storyboard */; };
@@ -16,6 +15,10 @@
 		5832D8EC1C745E1A00FCBFD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5832D8EA1C745E1A00FCBFD5 /* LaunchScreen.storyboard */; };
 		5832D8F71C745E1B00FCBFD5 /* Original_LifeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832D8F61C745E1B00FCBFD5 /* Original_LifeManagerTests.swift */; };
 		5832D9021C745E1B00FCBFD5 /* Original_LifeManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832D9011C745E1B00FCBFD5 /* Original_LifeManagerUITests.swift */; };
+		589EC59E1C7992430025F6C1 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589EC59D1C7992430025F6C1 /* ToDoTableViewController.swift */; };
+		589EC5A11C7994A00025F6C1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589EC59F1C7994A00025F6C1 /* TableViewCell.swift */; };
+		589EC5A21C7994A00025F6C1 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 589EC5A01C7994A00025F6C1 /* TableViewCell.xib */; };
+		589EC5A41C79997E0025F6C1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 589EC5A31C79997E0025F6C1 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,8 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5801B1841C7629D100709412 /* ToDoListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListTableViewController.swift; sourceTree = "<group>"; };
-		5801B1851C7629D100709412 /* ToDoListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToDoListTableViewController.xib; sourceTree = "<group>"; };
 		5832D8DE1C745E1A00FCBFD5 /* Original.LifeManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Original.LifeManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5832D8E11C745E1A00FCBFD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5832D8E31C745E1A00FCBFD5 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +52,15 @@
 		5832D8FD1C745E1B00FCBFD5 /* Original.LifeManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Original.LifeManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5832D9011C745E1B00FCBFD5 /* Original_LifeManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Original_LifeManagerUITests.swift; sourceTree = "<group>"; };
 		5832D9031C745E1B00FCBFD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		589EC59D1C7992430025F6C1 /* ToDoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
+		589EC59F1C7994A00025F6C1 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		589EC5A01C7994A00025F6C1 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		589EC5A31C79997E0025F6C1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		589EC5A61C79A6EF0025F6C1 /* forcheckHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = forcheckHeader.h; sourceTree = "<group>"; };
+		589EC5A71C7A9FBA0025F6C1 /* CTCheckbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCheckbox.h; sourceTree = "<group>"; };
+		606FBA5A900E6D3040FF2952 /* Pods-Original.LifeManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Original.LifeManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Original.LifeManager/Pods-Original.LifeManager.debug.xcconfig"; sourceTree = "<group>"; };
+		76B446469F3D24D722B097DC /* Pods_Original_LifeManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Original_LifeManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2759C283600CE39BA2C11F7 /* Pods-Original.LifeManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Original.LifeManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-Original.LifeManager/Pods-Original.LifeManager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30C5A4EE238F19829137DDC6 /* Pods_Original_LifeManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,15 +89,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EC2D2868A77682C94356F49 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				606FBA5A900E6D3040FF2952 /* Pods-Original.LifeManager.debug.xcconfig */,
+				B2759C283600CE39BA2C11F7 /* Pods-Original.LifeManager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5832D8D51C745E1A00FCBFD5 = {
 			isa = PBXGroup;
 			children = (
-				5801B1841C7629D100709412 /* ToDoListTableViewController.swift */,
-				5801B1851C7629D100709412 /* ToDoListTableViewController.xib */,
+				589EC5A31C79997E0025F6C1 /* Default-568h@2x.png */,
 				5832D8E01C745E1A00FCBFD5 /* Original.LifeManager */,
 				5832D8F51C745E1B00FCBFD5 /* Original.LifeManagerTests */,
 				5832D9001C745E1B00FCBFD5 /* Original.LifeManagerUITests */,
 				5832D8DF1C745E1A00FCBFD5 /* Products */,
+				1EC2D2868A77682C94356F49 /* Pods */,
+				D1CDF10AB44D0F45BD37B4ED /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,8 +124,13 @@
 		5832D8E01C745E1A00FCBFD5 /* Original.LifeManager */ = {
 			isa = PBXGroup;
 			children = (
+				589EC5A71C7A9FBA0025F6C1 /* CTCheckbox.h */,
+				589EC59D1C7992430025F6C1 /* ToDoTableViewController.swift */,
 				5832D8E11C745E1A00FCBFD5 /* AppDelegate.swift */,
 				5832D8E31C745E1A00FCBFD5 /* CalendarViewController.swift */,
+				589EC59F1C7994A00025F6C1 /* TableViewCell.swift */,
+				589EC5A61C79A6EF0025F6C1 /* forcheckHeader.h */,
+				589EC5A01C7994A00025F6C1 /* TableViewCell.xib */,
 				5832D8E51C745E1A00FCBFD5 /* Main.storyboard */,
 				5832D8E81C745E1A00FCBFD5 /* Assets.xcassets */,
 				5832D8EA1C745E1A00FCBFD5 /* LaunchScreen.storyboard */,
@@ -131,6 +157,14 @@
 			path = Original.LifeManagerUITests;
 			sourceTree = "<group>";
 		};
+		D1CDF10AB44D0F45BD37B4ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76B446469F3D24D722B097DC /* Pods_Original_LifeManager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5832D9061C745E1B00FCBFD5 /* Build configuration list for PBXNativeTarget "Original.LifeManager" */;
 			buildPhases = (
+				05A0CF4BA725F2711A372988 /* Check Pods Manifest.lock */,
 				5832D8DA1C745E1A00FCBFD5 /* Sources */,
 				5832D8DB1C745E1A00FCBFD5 /* Frameworks */,
 				5832D8DC1C745E1A00FCBFD5 /* Resources */,
+				77BAAFC06A3E3C2A5EFC2D06 /* Embed Pods Frameworks */,
+				65163CDC6F57B21C4A10B3A5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,8 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5832D8EC1C745E1A00FCBFD5 /* LaunchScreen.storyboard in Resources */,
-				5801B1871C7629D100709412 /* ToDoListTableViewController.xib in Resources */,
+				589EC5A21C7994A00025F6C1 /* TableViewCell.xib in Resources */,
 				5832D8E91C745E1A00FCBFD5 /* Assets.xcassets in Resources */,
+				589EC5A41C79997E0025F6C1 /* Default-568h@2x.png in Resources */,
 				5832D8E71C745E1A00FCBFD5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,14 +299,63 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		05A0CF4BA725F2711A372988 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		65163CDC6F57B21C4A10B3A5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Original.LifeManager/Pods-Original.LifeManager-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77BAAFC06A3E3C2A5EFC2D06 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Original.LifeManager/Pods-Original.LifeManager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5832D8DA1C745E1A00FCBFD5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				589EC5A11C7994A00025F6C1 /* TableViewCell.swift in Sources */,
 				5832D8E41C745E1A00FCBFD5 /* CalendarViewController.swift in Sources */,
+				589EC59E1C7992430025F6C1 /* ToDoTableViewController.swift in Sources */,
 				5832D8E21C745E1A00FCBFD5 /* AppDelegate.swift in Sources */,
-				5801B1861C7629D100709412 /* ToDoListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,6 +493,7 @@
 		};
 		5832D9071C745E1B00FCBFD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 606FBA5A900E6D3040FF2952 /* Pods-Original.LifeManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Original.LifeManager/Info.plist;
@@ -417,6 +505,7 @@
 		};
 		5832D9081C745E1B00FCBFD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2759C283600CE39BA2C11F7 /* Pods-Original.LifeManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Original.LifeManager/Info.plist;

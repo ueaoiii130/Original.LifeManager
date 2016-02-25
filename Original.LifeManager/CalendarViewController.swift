@@ -56,9 +56,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        //現在起動中のデバイスを取得（スクリーンの幅・高さ）
-        let screenWidth  = DeviseSize.screenWidth()
+//        
+//        //現在起動中のデバイスを取得（スクリーンの幅・高さ）
+        let screenWidth  = selfwide.screenWidth()
         let screenHeight = DeviseSize.screenHeight()
         
         //iPhone4s
@@ -143,7 +143,7 @@ class ViewController: UIViewController {
             self.prevMonthButton.frame = CGRectMake(18, 468, CGFloat(calendarSize), CGFloat(calendarSize));
             self.nextMonthButton.frame = CGRectMake(348, 468, CGFloat(calendarSize), CGFloat(calendarSize));
         }
-        
+//
         //ボタンを角丸にする
         prevMonthButton.layer.cornerRadius = CGFloat(buttonRadius)
         nextMonthButton.layer.cornerRadius = CGFloat(buttonRadius)
@@ -498,3 +498,4 @@ class ViewController: UIViewController {
 //
 //}
 //
+}

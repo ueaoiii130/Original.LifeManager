@@ -1,28 +1,67 @@
 //
-//  ToDoListTableViewController.swift
+//  ToDoTableViewController.swift
 //  Original.LifeManager
 //
-//  Created by Aoi Sakaue on 2016/02/19.
+//  Created by Aoi Sakaue on 2016/02/21.
 //  Copyright © 2016年 Aoi Sakaue. All rights reserved.
 //
 
 import UIKit
 
-class ToDoListTableViewController: UITableViewController {
+class ToDoTableViewController: UITableViewController , UITableViewDataSource , UITableViewDelegate{
+    var wordArray: [AnyObject] = []
+    let saveData = NSUserDefaults.standardUserDefaults()
+    
+    @IBOutlet weak var tableView: UIView!
     
     @IBOutlet var plusButton: UIButton!
     @IBOutlet var backButton: UIButton!
-    @IBOutlet var goButton: UIButton!
+    @IBOutlet var doButton: UIButton!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+//TableViewCellを使えるようにする
+        tableView.registerNib(UINib(nibName: "ToDoTableViewCell", bundle:nil), forCellReuseIdentifier: "todoCell")
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+//セクションの数を設定する。
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+//セルの個数を指定する。
+    override func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
+        return wordArray.count
+    }
+//セルの中身の表示の仕方を設定する。
+    override func tableVew(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath:indexPath) as!ListTableViewCell
+//        let nowIndexPathDictionary: (AnyObject) = wordArray[indexPath.row]
+//        
+//        cell.todoLabel.text = now
+    }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if saveData.arrayForKey("SCHEDULE") != nil {
+            wordArray = saveData.arrayForKey("SCHEDULE")!
+        }
+        tableView.reloadData()
+    }
+//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {let cell: UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Subtitle, reuseIdentifier: "todoCell")
+    
+//        cell.textLabel?.text = texts[indexPath.row]
+//        return cell
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,12 +80,6 @@ class ToDoListTableViewController: UITableViewController {
         return 0
     }
 
-    
-//壁紙保存画面まで行った時にリストに戻ってくるためのメソッド
-    @IBAction func list(segue: UIStoryboardSegue){
-        
-    }
-    
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
@@ -101,5 +134,5 @@ class ToDoListTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+
 }
