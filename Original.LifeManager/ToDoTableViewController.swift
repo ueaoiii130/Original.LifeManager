@@ -16,9 +16,9 @@ class ToDoTableViewController: UITableViewController {
     let saveData = NSUserDefaults.standardUserDefaults()
     
     
-    @IBOutlet var plusButton: UIButton!
-    @IBOutlet var backButton: UIButton!
-    @IBOutlet var doButton: UIButton!
+//    @IBOutlet var plusButton: UIButton!
+//    @IBOutlet var backButton: UIButton!
+//    @IBOutlet var doButton: UIButton!
     
     var checkbox = CTCheckbox()
     
@@ -30,7 +30,7 @@ class ToDoTableViewController: UITableViewController {
         tableView.dataSource = self
         
 //TableViewCellを使えるようにする
-        tableView.registerNib(UINib(nibName: "ToDoTableViewCell", bundle:nil), forCellReuseIdentifier: "todoCell")
+        tableView.registerNib(UINib(nibName: "TableViewCell", bundle:nil), forCellReuseIdentifier: "todoCell")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -48,9 +48,9 @@ class ToDoTableViewController: UITableViewController {
         return wordArray.count
     }
     
-    
+//    テーブルセルにデータをセットします
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath) as! ToDoTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath) as! TableViewCell
         cell.textLabel?.text = tableData[indexPath.row]
         
         cell.checkbox.tag = indexPath.row
@@ -59,26 +59,18 @@ class ToDoTableViewController: UITableViewController {
         return cell
     }
     
-
-//セルの中身の表示の仕方を設定する
-//    override func tableVew(tableView: UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("todocell", forIndexPath:indexPath) as!ToDoTableViewCell
-//        let nowIndexPathDictionary: (AnyObject) = wordArray[indexPath.row]
-//        
-//        cell.todoLabel.text = now
-//    }
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        if saveData.arrayForKey("SCHEDULE") != nil {
-//            wordArray = saveData.arrayForKey("SCHEDULE")!
-//        }
-//        tableView.reloadData()
-//    }
-//    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {let cell: UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Subtitle, reuseIdentifier: "todoCell")
-    
-//        cell.textLabel?.text = texts[indexPath.row]
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        if saveData.arrayForKey("WORD") != nil {
+            wordArray = saveData.arrayForKey("WORD")!
+        }
+        tableView.reloadData()
+    }
+//   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//    let cell: UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Subtitle, reuseIdentifier: "todoCell"
 //        return cell
 //    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -112,8 +104,7 @@ class ToDoTableViewController: UITableViewController {
     }
     
 
-//チェックボックス挑戦
-    
+//チェックボックス挑戦！
         // テーブルビュー
 //        var tableView: UITableView!
     
@@ -179,13 +170,13 @@ class ToDoTableViewController: UITableViewController {
 ////        var checkbox = CTCheckbox()
 //    
 //        func setData() -> Void {
-//            // ⭐️ここもポイント　チェックボックスを追加します
+////             ⭐️ここもポイント　チェックボックスを追加します
 //            checkbox.frame = CGRectMake(self.frame.width - 44, 0, 22, self.frame.height)
 //            checkbox.checkboxColor = UIColor.blackColor()
 //            checkbox.checkboxSideLength = 22
 //            self.addSubview(checkbox)
-//        }
-}
+//}
+
 
 
     /*
@@ -243,3 +234,4 @@ class ToDoTableViewController: UITableViewController {
     }
     */
 
+}

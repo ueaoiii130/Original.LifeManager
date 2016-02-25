@@ -7,12 +7,15 @@
 //
 
 import UIKit
-//import "CTCheckbox.h"
+import CTCheckbox
 //import "NAObjectiveCClass.h"
 //
 class TableViewCell: UITableViewCell {
     
     var checkbox = CTCheckbox()
+    
+    @IBOutlet var ToDoLabel: UILabel!
+    @IBOutlet var MemoLabel: UILabel!
     
     func setData() -> Void {
         // ⭐️ここもポイント　チェックボックスを追加します
@@ -34,4 +37,5 @@ class TableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+
 }
