@@ -37,6 +37,7 @@ class ViewController: UIViewController {
     @IBOutlet var nextMonthButton: UIButton!
     
     @IBOutlet var ToDoListButton: UIButton!
+    
     //カレンダーの位置決め用メンバ変数
     var calendarLabelIntervalX: Int!
     var calendarLabelX: Int!
@@ -71,7 +72,7 @@ class ViewController: UIViewController {
 
 
         
-//        //iPhone4s
+       //iPhone4s
         if(screenWidth == 320 && screenHeight == 480){
             
             calendarLabelIntervalX = 5;
@@ -155,9 +156,9 @@ class ViewController: UIViewController {
         }
 //
         //ボタンを角丸にする
-//        prevMonthButton.layer.cornerRadius = CGFloat(buttonRadius)
-//        nextMonthButton.layer.cornerRadius = CGFloat(buttonRadius)
-//        
+        prevMonthButton.layer.cornerRadius = CGFloat(buttonRadius)
+        nextMonthButton.layer.cornerRadius = CGFloat(buttonRadius)
+//
         //現在の日付を取得する
         now = NSDate()
         

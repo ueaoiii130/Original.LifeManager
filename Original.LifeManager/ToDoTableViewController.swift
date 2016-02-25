@@ -22,7 +22,6 @@ class ToDoTableViewController: UITableViewController {
     
     var checkbox = CTCheckbox()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,7 +50,9 @@ class ToDoTableViewController: UITableViewController {
 //    テーブルセルにデータをセットします
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath) as! TableViewCell
-        cell.textLabel?.text = tableData[indexPath.row]
+        cell.ToDoLabel?.text = String(wordArray[indexPath.row]["ToDo"])
+        cell.MemoLabel?.text = String(wordArray[indexPath.row]["Memo"])
+        
         
         cell.checkbox.tag = indexPath.row
         cell.checkbox.addTarget(self, action: "checked:", forControlEvents: .ValueChanged)
@@ -109,21 +110,18 @@ class ToDoTableViewController: UITableViewController {
 //        var tableView: UITableView!
     
         // テーブルデータ
-        var tableData = [
-            "データ1",
-            "データ2",
-            "データ3",
-            "データ4",
-            "データ5",
-        ]
+//        var tableData = [
+//            "データ1",
+//            "データ2",
+//            "データ3",
+//            "データ4",
+//            "データ5",
+//        ]
         // 選択中のセル
         var selected = [
-            false,
-            false,
-            false,
-            false,
-            false,
-        ]
+                for 
+    ]
+    
 //        override func viewDidLoad() {
 //            super.viewDidLoad()
             // Do any additional setup after loading the view, typically from a nib.
@@ -166,17 +164,17 @@ class ToDoTableViewController: UITableViewController {
         }
 
     
-//    class CustomTableViewCell: UITableViewCell{
-////        var checkbox = CTCheckbox()
-//    
-//        func setData() -> Void {
+    class CustomTableViewCell: UITableViewCell{
+        var checkbox = CTCheckbox()
+    
+        func setData() -> Void {
 ////             ⭐️ここもポイント　チェックボックスを追加します
-//            checkbox.frame = CGRectMake(self.frame.width - 44, 0, 22, self.frame.height)
-//            checkbox.checkboxColor = UIColor.blackColor()
-//            checkbox.checkboxSideLength = 22
-//            self.addSubview(checkbox)
-//}
-
+            checkbox.frame = CGRectMake(self.frame.width - 44, 0, 22, self.frame.height)
+            checkbox.checkboxColor = UIColor.blackColor()
+            checkbox.checkboxSideLength = 22
+            self.addSubview(checkbox)
+}
+    }
 
 
     /*

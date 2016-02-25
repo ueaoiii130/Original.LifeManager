@@ -6,7 +6,7 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calender-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Original_LifeManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,15 +24,8 @@
                                     <navigationItem title="Calender" id="gya-nx-73j"/>
                                 </items>
                             </navigationBar>
-                            <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqR-Yr-KSj">
-                                <rect key="frame" x="0.0" y="61" width="320" height="43"/>
-                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8y-fk-nnf">
-                                <rect key="frame" x="15" y="64" width="44" height="30"/>
+                                <rect key="frame" x="15" y="70" width="44" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="prev">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,19 +34,8 @@
                                     <action selector="getPrevMonthData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qd9-o9-OLe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUx-GA-zhI">
-                                <rect key="frame" x="216" y="486" width="102" height="38"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="ToDoList→">
-                                    <color key="titleColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="todolistButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oMn-DB-xtJ"/>
-                                    <segue destination="h0Z-Ry-hTS" kind="push" id="O6m-Fz-vVn"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eS-n9-FGr">
-                                <rect key="frame" x="261" y="63" width="39" height="30.5"/>
+                                <rect key="frame" x="261" y="69" width="39" height="30.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="next">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,15 +44,28 @@
                                     <action selector="getNextMonthData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6eC-iX-XaS"/>
                                 </connections>
                             </button>
+                            <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqR-Yr-KSj">
+                                <rect key="frame" x="0.0" y="63" width="320" height="43"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="5SE-11-Cft"/>
+                    <navigationItem key="navigationItem" title="Calender" id="5SE-11-Cft">
+                        <barButtonItem key="rightBarButtonItem" title="ToDoList→" id="Nch-vg-s3t">
+                            <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="h0Z-Ry-hTS" kind="push" id="K2e-9a-5R3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="ToDoListButton" destination="XUx-GA-zhI" id="Fgl-7e-jAf"/>
                         <outlet property="calendarBar" destination="LqR-Yr-KSj" id="FvA-aw-I06"/>
                         <outlet property="nextMonthButton" destination="3eS-n9-FGr" id="T8d-oY-whX"/>
                         <outlet property="prevMonthButton" destination="H8y-fk-nnf" id="ODR-t4-sGX"/>
@@ -91,9 +86,6 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="ToDoList" id="21y-Bi-beM">
-                        <barButtonItem key="leftBarButtonItem" title="カレンダー" id="GBv-o6-Ida">
-                            <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="→" id="iDr-ex-ABE">
                                 <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -170,15 +162,15 @@
             </objects>
             <point key="canvasLocation" x="723" y="1113"/>
         </scene>
-        <!--View Controller-->
+        <!--Finish View Controller-->
         <scene sceneID="BCs-fb-jZr">
             <objects>
-                <viewController id="HBL-OO-wAi" sceneMemberID="viewController">
+                <viewController id="HBL-OO-wAi" customClass="FinishViewController" customModule="Original_LifeManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gqi-oU-cFO"/>
                         <viewControllerLayoutGuide type="bottom" id="m0U-5C-g48"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hbU-Md-L2A">
+                    <view key="view" contentMode="scaleToFill" id="hbU-Md-L2A" customClass="Finish">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
