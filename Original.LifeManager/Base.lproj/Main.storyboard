@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" layoutMarginsFollowReadableWidth="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -26,9 +26,9 @@
                                 </items>
                             </navigationBar>
                             <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqR-Yr-KSj">
-                                <rect key="frame" x="0.0" y="57" width="320" height="42"/>
+                                <rect key="frame" x="0.0" y="56" width="320" height="42"/>
                                 <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -41,7 +41,7 @@
                                 </state>
                                 <connections>
                                     <action selector="getNextMonthData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6eC-iX-XaS"/>
-                                    <outletCollection property="gestureRecognizers" destination="vfd-ff-WZk" appends="YES" id="45c-HM-1Hl"/>
+                                    <outletCollection property="gestureRecognizers" destination="q9l-LU-P8E" appends="YES" id="Lau-Fm-O9q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8y-fk-nnf">
@@ -53,12 +53,15 @@
                                 </state>
                                 <connections>
                                     <action selector="getPrevMonthData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qd9-o9-OLe"/>
-                                    <outletCollection property="gestureRecognizers" destination="dbR-Kp-5Lm" appends="YES" id="AUK-NW-hNu"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="vrp-b9-btK" appends="YES" id="0na-WI-Drw"/>
+                            <outletCollection property="gestureRecognizers" destination="q9l-LU-P8E" appends="YES" id="DHs-ug-TAO"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Calender" id="5SE-11-Cft">
@@ -78,18 +81,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="vfd-ff-WZk">
+                <swipeGestureRecognizer direction="right" id="vrp-b9-btK">
                     <connections>
-                        <action selector="swipeNextCalendar:" destination="BYZ-38-t0r" id="edI-d8-sXv"/>
+                        <action selector="swipePrevCalendar:" destination="BYZ-38-t0r" id="0z9-k8-V2I"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="dbR-Kp-5Lm">
+                <swipeGestureRecognizer direction="left" id="q9l-LU-P8E">
                     <connections>
-                        <action selector="swipePrevCalendar:" destination="BYZ-38-t0r" id="NEg-pO-QL7"/>
+                        <action selector="swipeNextCalendar:" destination="BYZ-38-t0r" id="aTT-ms-OuJ"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-142" y="358"/>
+            <point key="canvasLocation" x="-86" y="358"/>
         </scene>
         <!--ToDoList-->
         <scene sceneID="HIw-Fh-XJP">
@@ -102,16 +105,21 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="ToDoList" id="21y-Bi-beM">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="lyR-cY-WMp">
+                            <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem title="→" id="iDr-ex-ABE">
                                 <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <action selector="doButton:" destination="h0Z-Ry-hTS" id="3ml-YW-OPr"/>
                                     <segue destination="HBL-OO-wAi" kind="push" id="TKE-uv-ME9"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="＋" id="56D-TQ-flw">
                                 <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
+                                    <action selector="plusButton:" destination="h0Z-Ry-hTS" id="Iij-pC-dr5"/>
                                     <segue destination="ZAy-UI-Yt5" kind="push" id="3v7-BF-ZUW"/>
                                 </connections>
                             </barButtonItem>
@@ -120,8 +128,13 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mP-Nv-j5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="ufw-1z-w3u">
+                    <connections>
+                        <action selector="swipeCalendar:" destination="h0Z-Ry-hTS" id="A2W-jM-ksc"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="265" y="358"/>
+            <point key="canvasLocation" x="312" y="358"/>
         </scene>
         <!--リストに追加-->
         <scene sceneID="dqu-3r-ZT6">

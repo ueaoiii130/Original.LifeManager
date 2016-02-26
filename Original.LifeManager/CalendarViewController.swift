@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     var calendarLabelY: Int!
     var calendarLabelWidth: Int!
     var calendarLabelHeight: Int!
-    var calendarLableFontSize: Int!
+    var calendarLabelFontSize: Int!
     
     var buttonRadius: Float!
     
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
             calendarLabelY         = 93;
             calendarLabelWidth     = 40;
             calendarLabelHeight    = 25;
-            calendarLableFontSize  = 14;
+            calendarLabelFontSize  = 14;
             
             buttonRadius           = 20.0;
             
@@ -99,7 +99,7 @@ class ViewController: UIViewController {
             calendarLabelY         = 93;
             calendarLabelWidth     = 40;
             calendarLabelHeight    = 25;
-            calendarLableFontSize  = 14;
+            calendarLabelFontSize  = 14;
             
             buttonRadius           = 20.0;
             
@@ -118,7 +118,7 @@ class ViewController: UIViewController {
             calendarLabelY         = 95;
             calendarLabelWidth     = 45;
             calendarLabelHeight    = 25;
-            calendarLableFontSize  = 16;
+            calendarLabelFontSize  = 16;
             
             buttonRadius           = 22.5;
             
@@ -140,7 +140,7 @@ class ViewController: UIViewController {
             calendarLabelY         = 95;
             calendarLabelWidth     = 55;
             calendarLabelHeight    = 25;
-            calendarLableFontSize  = 18;
+            calendarLabelFontSize  = 18;
             
             buttonRadius           = 25;
             
@@ -221,12 +221,16 @@ class ViewController: UIViewController {
                     red: CGFloat(0.831), green: CGFloat(0.349), blue: CGFloat(0.224), alpha: CGFloat(1.0)
                 )
                 
-                //土曜日の場合は青色を指定
+                //土曜日の場合は青色RoyalBlue4を指定
             }else if(i == 6){
                 
                 //RGBカラーの設定は小数値をCGFloat型にしてあげる
                 calendarBaseLabel.textColor = UIColor(
-                    red: CGFloat(0.400), green: CGFloat(0.471), blue: CGFloat(0.980), alpha: CGFloat(1.0)
+//                    red: CGFloat(0.400), green: CGFloat(0.471), blue: CGFloat(0.980), alpha: CGFloat(1.0)
+                    red: CGFloat(0.15), green: CGFloat(0.25), blue: CGFloat(0.55), alpha: CGFloat(1.0)
+//                    red:0, green:0, blue:0.4, alpha:1.0
+
+                    
                 )
                 
                 //平日の場合は灰色を指定
@@ -240,7 +244,7 @@ class ViewController: UIViewController {
             //曜日ラベルの配置
             calendarBaseLabel.text = String(array[i] as! NSString)
             calendarBaseLabel.textAlignment = NSTextAlignment.Center
-            calendarBaseLabel.font = UIFont(name: "System", size: CGFloat(calendarLableFontSize))
+            calendarBaseLabel.font = UIFont(name: "System", size: CGFloat(calendarLabelFontSize))
             self.view.addSubview(calendarBaseLabel)
         }
     }
@@ -300,7 +304,8 @@ class ViewController: UIViewController {
                 )
             }else if(i % 7 == 6){
                 calendarBackGroundColor = UIColor(
-                    red: CGFloat(0.400), green: CGFloat(0.471), blue: CGFloat(0.980), alpha: CGFloat(1.0)
+                    red: CGFloat(0.15), green: CGFloat(0.25), blue: CGFloat(0.55), alpha: CGFloat(1.0)
+//                    red: CGFloat(0.400), green: CGFloat(0.471), blue: CGFloat(0.980), alpha: CGFloat(1.0)
                 )
             }else{
                 calendarBackGroundColor = UIColor.lightGrayColor()
@@ -459,29 +464,10 @@ class ViewController: UIViewController {
         prevCalendarSettings()
     }
     
-// 左へスワイプ
-//    UISwipeGestureRecognizer* swipeLeftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeftGesture:)];
-//    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
-//    [self.view addGestureRecognizer:swipeLeftGesture];
-//    [swipeLeftGesture release];
-//    // 右へスワイプ
-//    UISwipeGestureRecognizer* swipeRightGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRightGesture:)];
-//    swipeRightGesture.direction = UISwipeGestureRecognizerDirectionRight;
-//    [self.view addGestureRecognizer:swipeRightGesture];
-//    [swipeRightGesture release];
-//    
-//    - (void) handleSwipeLeftGesture:(UISwipeGestureRecognizer *)sender {
-//    NSLog(@"swipe left");
-//    }
-//    - (void) handleSwipeRightGesture:(UISwipeGestureRecognizer *)sender {
-//    NSLog(@"swipe right");
-//    }
-    
 //右スワイプで次月を表示
     @IBAction func swipeNextCalendar(sender: UISwipeGestureRecognizer) {
         nextCalendarSettings()
-        
-        
+
     }
     
     //前月を表示するメソッド
