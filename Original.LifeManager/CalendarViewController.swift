@@ -459,9 +459,29 @@ class ViewController: UIViewController {
         prevCalendarSettings()
     }
     
-    //右スワイプで次月を表示
+// 左へスワイプ
+//    UISwipeGestureRecognizer* swipeLeftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeftGesture:)];
+//    swipeLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
+//    [self.view addGestureRecognizer:swipeLeftGesture];
+//    [swipeLeftGesture release];
+//    // 右へスワイプ
+//    UISwipeGestureRecognizer* swipeRightGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRightGesture:)];
+//    swipeRightGesture.direction = UISwipeGestureRecognizerDirectionRight;
+//    [self.view addGestureRecognizer:swipeRightGesture];
+//    [swipeRightGesture release];
+//    
+//    - (void) handleSwipeLeftGesture:(UISwipeGestureRecognizer *)sender {
+//    NSLog(@"swipe left");
+//    }
+//    - (void) handleSwipeRightGesture:(UISwipeGestureRecognizer *)sender {
+//    NSLog(@"swipe right");
+//    }
+    
+//右スワイプで次月を表示
     @IBAction func swipeNextCalendar(sender: UISwipeGestureRecognizer) {
         nextCalendarSettings()
+        
+        
     }
     
     //前月を表示するメソッド
