@@ -59,6 +59,15 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
 
+        // 色を変数に用意しておく
+    
+        
+        let color1 = UIColor(
+            red: CGFloat(0.00), green: CGFloat(0.00), blue: CGFloat(0.40), alpha: CGFloat(1.0)
+            )
+        
+        // 背景の色を変えたい。
+        self.navigationController?.navigationBar.barTintColor = color1
         
 ////現在起動中のデバイスを取得（スクリーンの幅・高さ）
 //        let screenWidth  = selfwide.screenWidth()
@@ -272,7 +281,8 @@ class ViewController: UIViewController {
                 CGFloat(positionY),
                 CGFloat(buttonSizeX),
                 CGFloat(buttonSizeY)
-            );
+            )
+            
             
             //ボタンの初期設定をする
             if(i < dayOfWeek - 1){
@@ -309,7 +319,9 @@ class ViewController: UIViewController {
                 )
             }else{
                 calendarBackGroundColor = UIColor.lightGrayColor()
+//            
             }
+            
             
             //ボタンのデザインを決定する
             button.backgroundColor = calendarBackGroundColor
@@ -319,6 +331,7 @@ class ViewController: UIViewController {
             
             //配置したボタンに押した際のアクションを設定する
             button.addTarget(self, action: "buttonTapped:", forControlEvents: .TouchUpInside)
+            
             
             //ボタンを配置する
             self.view.addSubview(button)
@@ -449,6 +462,10 @@ class ViewController: UIViewController {
         print("\(year)年\(month)月\(button.tag)日が選択されました！")
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+    }
+    
     //前の月のボタンを押した際のアクション
     @IBAction func getPrevMonthData(sender: UIButton) {
         prevCalendarSettings()
@@ -458,17 +475,16 @@ class ViewController: UIViewController {
     @IBAction func getNextMonthData(sender: UIButton) {
         nextCalendarSettings()
     }
-    
-    //左スワイプで前月を表示
-    @IBAction func swipePrevCalendar(sender: UISwipeGestureRecognizer) {
-        prevCalendarSettings()
-    }
+//左スワイプで前月を表示
+//    @IBAction func swipePrevCalendar(sender: UISwipeGestureRecognizer) {
+//        prevCalendarSettings()
+//    }
     
 //右スワイプで次月を表示
-    @IBAction func swipeNextCalendar(sender: UISwipeGestureRecognizer) {
-        nextCalendarSettings()
-
-    }
+//    @IBAction func swipeNextCalendar(sender: UISwipeGestureRecognizer) {
+//        nextCalendarSettings()
+//        //prepareForSegue("", sender: nil)
+//    }
     
     //前月を表示するメソッド
     func prevCalendarSettings() {
@@ -502,7 +518,10 @@ class ViewController: UIViewController {
         
     }
 
-
+//スワイプ移動
+    @IBAction func swipePrepareSegue(sender: UISwipeGestureRecognizer) {
+        performSegueWithIdentifier("next", sender: self)
+    }
 
 
 //class ViewController: UIViewController {

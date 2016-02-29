@@ -31,8 +31,12 @@ class ToDoTableViewController: UITableViewController {
         //TableViewCellを使えるようにする
         tableView.registerNib(UINib(nibName: "TableViewCell", bundle:nil), forCellReuseIdentifier: "todoCell")
         
-        // 編集ボタンを左下に配置
-        navigationItem.leftBarButtonItem = editButtonItem()
+        // 編集ボタンを右上に配置
+        navigationItem.rightBarButtonItem = editButtonItem()
+        
+//        let modoru = UIBarButtonItem(title: "back", style: UIBarButtonItemStyle.Plain,target:self, action: "addTapped")
+//        navigationItem.setLeftBarButtonItem(modoru, animated: true)
+        
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -154,17 +158,21 @@ class ToDoTableViewController: UITableViewController {
         
     }
     
-    @IBAction func backButton(seque: UIStoryboardSegue) {
-        
+    @IBAction func backButton(){
+        navigationController?.popToRootViewControllerAnimated(true)
     }
     
     @IBAction func doButton(seque: UIStoryboardSegue) {
         
     }
+//スワイプ
+   /* @IBAction func swipeSegue(sender: UISwipeGestureRecognizer) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }*/
     
-    @IBAction func swipeCalendar(sender: UISwipeGestureRecognizer) {
-        
-    }
+//    @IBAction func swipePrepareSegue(sender: UISwipeGestureRecognizer) {
+//        prepareForSegue(<#T##segue: UIStoryboardSegue##UIStoryboardSegue#>, sender: nil)
+//    }
 
     
     //チェックボックス挑戦！

@@ -41,7 +41,6 @@
                                 </state>
                                 <connections>
                                     <action selector="getNextMonthData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6eC-iX-XaS"/>
-                                    <outletCollection property="gestureRecognizers" destination="q9l-LU-P8E" appends="YES" id="Lau-Fm-O9q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8y-fk-nnf">
@@ -59,7 +58,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="vrp-b9-btK" appends="YES" id="0na-WI-Drw"/>
                             <outletCollection property="gestureRecognizers" destination="q9l-LU-P8E" appends="YES" id="DHs-ug-TAO"/>
                         </connections>
                     </view>
@@ -81,14 +79,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="vrp-b9-btK">
+                <swipeGestureRecognizer direction="right" id="q9l-LU-P8E">
                     <connections>
-                        <action selector="swipePrevCalendar:" destination="BYZ-38-t0r" id="0z9-k8-V2I"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" id="q9l-LU-P8E">
-                    <connections>
-                        <action selector="swipeNextCalendar:" destination="BYZ-38-t0r" id="aTT-ms-OuJ"/>
+                        <action selector="swipePrepareSegue:" destination="BYZ-38-t0r" id="ls9-5T-g2s"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
@@ -105,10 +98,10 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="ToDoList" id="21y-Bi-beM">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="lyR-cY-WMp">
-                            <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                        </barButtonItem>
                         <rightBarButtonItems>
+                            <barButtonItem systemItem="edit" id="lyR-cY-WMp">
+                                <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </barButtonItem>
                             <barButtonItem title="→" id="iDr-ex-ABE">
                                 <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -128,11 +121,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mP-Nv-j5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="ufw-1z-w3u">
-                    <connections>
-                        <action selector="swipeCalendar:" destination="h0Z-Ry-hTS" id="A2W-jM-ksc"/>
-                    </connections>
-                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="ufw-1z-w3u"/>
             </objects>
             <point key="canvasLocation" x="312" y="358"/>
         </scene>

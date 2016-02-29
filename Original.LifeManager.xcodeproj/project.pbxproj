@@ -18,11 +18,11 @@
 		589EC59E1C7992430025F6C1 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589EC59D1C7992430025F6C1 /* ToDoTableViewController.swift */; };
 		589EC5A11C7994A00025F6C1 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589EC59F1C7994A00025F6C1 /* TableViewCell.swift */; };
 		589EC5A21C7994A00025F6C1 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 589EC5A01C7994A00025F6C1 /* TableViewCell.xib */; };
-		589EC5A41C79997E0025F6C1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 589EC5A31C79997E0025F6C1 /* Default-568h@2x.png */; };
 		589EC5AF1C7EE43D0025F6C1 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589EC5AE1C7EE43D0025F6C1 /* AddViewController.swift */; };
 		589EC5B11C7EF31F0025F6C1 /* DeviseSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589EC5B01C7EF31F0025F6C1 /* DeviseSize.swift */; };
 		589EC5B31C7F0F7E0025F6C1 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589EC5B21C7F0F7E0025F6C1 /* FinishViewController.swift */; };
 		589EC5B41C7F10A20025F6C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5832D8E11C745E1A00FCBFD5 /* AppDelegate.swift */; };
+		589EC5B61C817EF10025F6C1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 589EC5B51C817EF10025F6C1 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +59,10 @@
 		589EC59D1C7992430025F6C1 /* ToDoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
 		589EC59F1C7994A00025F6C1 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		589EC5A01C7994A00025F6C1 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
-		589EC5A31C79997E0025F6C1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		589EC5AE1C7EE43D0025F6C1 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddViewController.swift; path = ../AddViewController.swift; sourceTree = "<group>"; };
 		589EC5B01C7EF31F0025F6C1 /* DeviseSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviseSize.swift; sourceTree = "<group>"; };
 		589EC5B21C7F0F7E0025F6C1 /* FinishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
+		589EC5B51C817EF10025F6C1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		606FBA5A900E6D3040FF2952 /* Pods-Original.LifeManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Original.LifeManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Original.LifeManager/Pods-Original.LifeManager.debug.xcconfig"; sourceTree = "<group>"; };
 		76B446469F3D24D722B097DC /* Pods_Original_LifeManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Original_LifeManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2759C283600CE39BA2C11F7 /* Pods-Original.LifeManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Original.LifeManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-Original.LifeManager/Pods-Original.LifeManager.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		5832D8D51C745E1A00FCBFD5 = {
 			isa = PBXGroup;
 			children = (
-				589EC5A31C79997E0025F6C1 /* Default-568h@2x.png */,
+				589EC5B51C817EF10025F6C1 /* Default-568h@2x.png */,
 				5832D8E01C745E1A00FCBFD5 /* Original.LifeManager */,
 				5832D8F51C745E1B00FCBFD5 /* Original.LifeManagerTests */,
 				5832D9001C745E1B00FCBFD5 /* Original.LifeManagerUITests */,
@@ -129,12 +129,12 @@
 		5832D8E01C745E1A00FCBFD5 /* Original.LifeManager */ = {
 			isa = PBXGroup;
 			children = (
+				5832D8E51C745E1A00FCBFD5 /* Main.storyboard */,
 				589EC5AE1C7EE43D0025F6C1 /* AddViewController.swift */,
 				589EC59D1C7992430025F6C1 /* ToDoTableViewController.swift */,
 				5832D8E31C745E1A00FCBFD5 /* CalendarViewController.swift */,
 				589EC59F1C7994A00025F6C1 /* TableViewCell.swift */,
 				589EC5A01C7994A00025F6C1 /* TableViewCell.xib */,
-				5832D8E51C745E1A00FCBFD5 /* Main.storyboard */,
 				5832D8E11C745E1A00FCBFD5 /* AppDelegate.swift */,
 				5832D8E81C745E1A00FCBFD5 /* Assets.xcassets */,
 				5832D8EA1C745E1A00FCBFD5 /* LaunchScreen.storyboard */,
@@ -284,7 +284,7 @@
 				5832D8EC1C745E1A00FCBFD5 /* LaunchScreen.storyboard in Resources */,
 				589EC5A21C7994A00025F6C1 /* TableViewCell.xib in Resources */,
 				5832D8E91C745E1A00FCBFD5 /* Assets.xcassets in Resources */,
-				589EC5A41C79997E0025F6C1 /* Default-568h@2x.png in Resources */,
+				589EC5B61C817EF10025F6C1 /* Default-568h@2x.png in Resources */,
 				5832D8E71C745E1A00FCBFD5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
