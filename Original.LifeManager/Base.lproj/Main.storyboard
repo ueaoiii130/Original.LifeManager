@@ -6,7 +6,7 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--Calender-->
+        <!--カレンダー-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Original_LifeManager" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,34 +26,35 @@
                                 </items>
                             </navigationBar>
                             <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqR-Yr-KSj">
-                                <rect key="frame" x="0.0" y="56" width="320" height="42"/>
-                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="0.0" y="59" width="320" height="30"/>
+                                <color key="backgroundColor" red="0.92975526891397864" green="0.93587740380256412" blue="0.0072241713540744665" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eS-n9-FGr">
-                                <rect key="frame" x="278" y="66.5" width="39" height="30.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3eS-n9-FGr">
+                                <rect key="frame" x="243" y="399" width="89" height="85"/>
                                 <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="next">
+                                <state key="normal" image="arrowright.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="getNextMonthData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6eC-iX-XaS"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8y-fk-nnf">
-                                <rect key="frame" x="4" y="67" width="44" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8y-fk-nnf">
+                                <rect key="frame" x="-6" y="396" width="88" height="88"/>
                                 <gestureRecognizers/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="prev">
+                                <state key="normal" image="arrowleft.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="getPrevMonthData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qd9-o9-OLe"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="todoくん.png" translatesAutoresizingMaskIntoConstraints="NO" id="SE3-61-khw">
+                                <rect key="frame" x="49" y="401" width="216" height="115"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -62,9 +63,9 @@
                         </connections>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Calender" id="5SE-11-Cft">
+                    <navigationItem key="navigationItem" title="カレンダー" id="5SE-11-Cft" colorLabel="IBBuiltInLabel-Yellow">
                         <barButtonItem key="rightBarButtonItem" title="ToDoList→" id="Nch-vg-s3t">
-                            <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="todolistButton:" destination="BYZ-38-t0r" id="2hr-dy-sDK"/>
                                 <segue destination="h0Z-Ry-hTS" kind="push" id="K2e-9a-5R3"/>
@@ -72,6 +73,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="calendarBar" destination="LqR-Yr-KSj" id="FvA-aw-I06"/>
                         <outlet property="nextMonthButton" destination="3eS-n9-FGr" id="T8d-oY-whX"/>
@@ -100,17 +102,17 @@
                     <navigationItem key="navigationItem" title="ToDoList" id="21y-Bi-beM">
                         <rightBarButtonItems>
                             <barButtonItem systemItem="edit" id="lyR-cY-WMp">
-                                <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </barButtonItem>
                             <barButtonItem title="→" id="iDr-ex-ABE">
-                                <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="doButton:" destination="h0Z-Ry-hTS" id="3ml-YW-OPr"/>
                                     <segue destination="HBL-OO-wAi" kind="push" id="TKE-uv-ME9"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem title="＋" id="56D-TQ-flw">
-                                <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="plusButton:" destination="h0Z-Ry-hTS" id="Iij-pC-dr5"/>
                                     <segue destination="ZAy-UI-Yt5" kind="push" id="3v7-BF-ZUW"/>
@@ -119,6 +121,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mP-Nv-j5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="ufw-1z-w3u"/>
@@ -137,11 +140,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Dc-Dw-vB7">
-                                <rect key="frame" x="32" y="181" width="265" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="add.png" translatesAutoresizingMaskIntoConstraints="NO" id="23E-Tj-3Wz">
+                                <rect key="frame" x="0.0" y="27" width="320" height="534"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Memo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iN-8r-enA">
                                 <rect key="frame" x="26" y="248" width="48" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -150,6 +151,11 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GWH-K7-Y4u">
                                 <rect key="frame" x="32" y="288" width="265" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Dc-Dw-vB7">
+                                <rect key="frame" x="32" y="181" width="265" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -165,12 +171,13 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="リストに追加" id="XOf-rt-Q8C">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="tct-S8-Qwa">
-                            <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="saveWord" destination="ZAy-UI-Yt5" id="jxt-eI-1vD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="MemoTextField" destination="GWH-K7-Y4u" id="oBM-5s-6lX"/>
                         <outlet property="ToDoTextField" destination="8Dc-Dw-vB7" id="Vga-WT-bYb"/>
@@ -253,6 +260,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="aOo-vS-DqY"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwE-FQ-mx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Rmg-nC-2ay" userLabel="Exit" sceneMemberID="exit"/>
@@ -264,6 +272,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rCD-89-ZfE" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yf8-dA-1dD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -278,4 +287,10 @@
             <point key="canvasLocation" x="-507" y="358"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add.png" width="573" height="1018"/>
+        <image name="arrowleft.png" width="1024" height="1024"/>
+        <image name="arrowright.png" width="1024" height="1024"/>
+        <image name="todoくん.png" width="1053" height="765"/>
+    </resources>
 </document>

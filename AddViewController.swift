@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+//ToDoリストに項目を追加する画面
 class AddViewController: UIViewController {
     
     @IBOutlet var ToDoTextField: UITextField!

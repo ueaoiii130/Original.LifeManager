@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//カレンダーの画面
 
 //CALayerクラスのインポート
 import QuartzCore
@@ -63,10 +64,11 @@ class ViewController: UIViewController {
     
         
         let color1 = UIColor(
-            red: CGFloat(0.00), green: CGFloat(0.00), blue: CGFloat(0.40), alpha: CGFloat(1.0)
+            red: CGFloat(0.93), green: CGFloat(0.83), blue: CGFloat(0.10), alpha: CGFloat(1.0)
+//            red: CGFloat(0.10), green: CGFloat(0.30), blue: CGFloat(0.50), alpha: CGFloat(1.0)
             )
         
-        // 背景の色を変えたい。
+        // 背景の色を変える
         self.navigationController?.navigationBar.barTintColor = color1
         
 ////現在起動中のデバイスを取得（スクリーンの幅・高さ）
@@ -230,7 +232,7 @@ class ViewController: UIViewController {
                     red: CGFloat(0.831), green: CGFloat(0.349), blue: CGFloat(0.224), alpha: CGFloat(1.0)
                 )
                 
-                //土曜日の場合は青色RoyalBlue4を指定
+                //土曜日の場合は青色(RoyalBlue4)を指定
             }else if(i == 6){
                 
                 //RGBカラーの設定は小数値をCGFloat型にしてあげる
@@ -239,13 +241,11 @@ class ViewController: UIViewController {
                     red: CGFloat(0.15), green: CGFloat(0.25), blue: CGFloat(0.55), alpha: CGFloat(1.0)
 //                    red:0, green:0, blue:0.4, alpha:1.0
 
-                    
                 )
                 
                 //平日の場合は灰色を指定
             }else{
                 
-                //既に用意されている配色パターンの場合
                 calendarBaseLabel.textColor = UIColor.lightGrayColor()
                 
             }
@@ -307,7 +307,6 @@ class ViewController: UIViewController {
             }
             
             //ボタンの配色の設定
-            //@remark:このサンプルでは正円のボタンを作っていますが、背景画像の設定等も可能です。
             if(i % 7 == 0){
                 calendarBackGroundColor = UIColor(
                     red: CGFloat(0.831), green: CGFloat(0.349), blue: CGFloat(0.224), alpha: CGFloat(1.0)
@@ -318,8 +317,9 @@ class ViewController: UIViewController {
 //                    red: CGFloat(0.400), green: CGFloat(0.471), blue: CGFloat(0.980), alpha: CGFloat(1.0)
                 )
             }else{
+                
                 calendarBackGroundColor = UIColor.lightGrayColor()
-//            
+//
             }
             
             

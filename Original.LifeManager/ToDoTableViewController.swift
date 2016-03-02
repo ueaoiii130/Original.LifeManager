@@ -9,7 +9,7 @@
 import UIKit
 import CTCheckbox
 
-//class ToDoTableViewController: UITableViewController , UITableViewDataSource , UITableViewDelegate{
+//ToDoリストの画面
 class ToDoTableViewController: UITableViewController {
     
     var wordArray: [AnyObject] = []
