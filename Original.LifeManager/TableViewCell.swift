@@ -8,17 +8,17 @@
 
 import UIKit
 import CTCheckbox
-//import "NAObjectiveCClass.h"
-//
+
 class TableViewCell: UITableViewCell {
     
     var checkbox = CTCheckbox()
     
     @IBOutlet var ToDoLabel: UILabel!
     @IBOutlet var MemoLabel: UILabel!
+    @IBOutlet var DateLabel: UILabel!
     
     func setData() -> Void {
-        // ⭐️ここもポイント　チェックボックスを追加します
+        //チェックボックスを追加
         checkbox.frame = CGRectMake(self.frame.width - 44, 0, 22, self.frame.height)
         checkbox.checkboxColor = UIColor.blackColor()
         checkbox.checkboxSideLength = 22

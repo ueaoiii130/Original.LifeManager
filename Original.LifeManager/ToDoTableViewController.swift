@@ -78,6 +78,8 @@ class ToDoTableViewController: UITableViewController {
         //        }
         cell.ToDoLabel?.text = String(wordArray[indexPath.row]["ToDo"] as! String)
         cell.MemoLabel?.text = String(wordArray[indexPath.row]["Memo"] as! String)
+        cell.DateLabel?.text = String(wordArray[indexPath.row]["Date"] as! String)
+
         
         
         
@@ -94,11 +96,12 @@ class ToDoTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
         return UITableViewCellEditingStyle.Delete
     }
+    
     //deleteボタンが押された時の処理
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         wordArray.removeAtIndex(indexPath.row)
         tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-        //        wordArrayの保存を行う
+        //wordArrayの保存を行う
         saveData.setObject(wordArray, forKey: "WORD")
         
     }
@@ -129,11 +132,7 @@ class ToDoTableViewController: UITableViewController {
         }
         tableView.reloadData()
     }
-    //   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    //    let cell: UITableViewCell = UITableViewCell(style:UITableViewCellStyle.Subtitle, reuseIdentifier: "todoCell"
-    //        return cell
-    //    }
-    
+       
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -233,6 +232,8 @@ class ToDoTableViewController: UITableViewController {
             checkbox.checkboxSideLength = 22
             self.addSubview(checkbox)
         }
+    }
+     func ToDotableView(table: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath) {
     }
     
     
