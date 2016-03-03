@@ -55,7 +55,7 @@ class ToDoTableViewController: UITableViewController {
         return wordArray.count
     }
     
-    //    テーブルセルにデータをセットします
+    //テーブルセルにデータをセットする
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath) as! TableViewCell
         
@@ -76,15 +76,13 @@ class ToDoTableViewController: UITableViewController {
         //            saveData.setObject(wordArray, forKey: "WORD")
         //
         //        }
+        
+        
         cell.ToDoLabel?.text = String(wordArray[indexPath.row]["ToDo"] as! String)
         cell.MemoLabel?.text = String(wordArray[indexPath.row]["Memo"] as! String)
 //        cell.DateLabel?.text = String(wordArray[indexPath.row]["Date"] as! String)
 
-        
-        
-        
-        
-        
+
         cell.checkbox.tag = indexPath.row
         cell.checkbox.addTarget(self, action: "checked:", forControlEvents: .ValueChanged)
         cell.setData()
@@ -233,8 +231,71 @@ class ToDoTableViewController: UITableViewController {
             self.addSubview(checkbox)
         }
     }
-     func ToDotableView(table: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath) {
-    }
     
+    func ToDotableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath)
+        if indexPath.row == 0 {
+            cell.textLabel!.text = "０行目"
+        }else if indexPath.row == 1 {
+            cell.textLabel!.text = "１行目"
+        }else if indexPath.row == 2 {
+            cell.textLabel!.text = "２行目"
+        }else if indexPath.row == 3 {
+            cell.textLabel!.text = "3行目"
+        }else if indexPath.row == 4 {
+            cell.textLabel!.text = "4行目"
+        }else if indexPath.row == 5 {
+            cell.textLabel!.text = "5行目"
+        }else if indexPath.row == 6 {
+            cell.textLabel!.text = "6行目"
+        }else if indexPath.row == 7 {
+            cell.textLabel!.text = "7行目"
+        }
+        return cell
+    }
+    func ToDotableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 0 {//0行目
+            performSegueWithIdentifier("zeroSegue", sender: indexPath.row)
+        }else if indexPath.row == 1 {//1行目
+            performSegueWithIdentifier("firstSegue", sender: indexPath.row)
+        }else if indexPath.row == 2 {//2行目
+            performSegueWithIdentifier("secondSegue", sender: indexPath.row)
+        }
+    }
+
+//    //各セルの要素を設定する
+//    func ToDotableView(table: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        
+//        // tableCell の ID で UITableViewCell のインスタンスを生成
+////        let cell = table.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath)
+//        
+//        ToDolabel.text = String(wordArray[indexPath.row]["ToDo"] as! String)
+//
+//        // Tag番号 1 で UIImageView インスタンスの生成
+//        let imageView = table.viewWithTag(1) as! UIImageView
+//        imageView.image = img
+//        
+//        // Tag番号 ２ で UILabel インスタンスの生成
+//        let label1 = table.viewWithTag(2) as! UILabel
+//        label1.text = "No.\(indexPath.row + 1)"
+//        
+//        // Tag番号 ３ で UILabel インスタンスの生成
+//        let label2 = table.viewWithTag(3) as! UILabel
+//        label2.text = "\(label2Array[indexPath.row])"
+//        
+//        
+//        return cell
+//    }
+    
+//    // Cell が選択された場合
+//    func ToDotableView(table: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath) {
+//        // [indexPath.row] から画像名を探し、UImage を設定
+////        selectedImage = UIImage(named:"\(imgArray[indexPath.row])")
+////        if selectedImage != nil {
+//            // SubViewController へ遷移するために Segue を呼び出す
+//            performSegueWithIdentifier("toSubViewController",sender: nil)
+//        }
+//        
+//    }
     
 }

@@ -39,6 +39,8 @@ class ViewController: UIViewController {
     
     @IBOutlet var ToDoListButton: UIButton!
     
+    @IBOutlet var ToDokun: UIImageView!
+    
     //カレンダーの位置決め用メンバ変数
     var calendarLabelIntervalX: Int!
     var calendarLabelX: Int!
@@ -61,11 +63,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         // 色を変数に用意しておく
-    
-        
         let color1 = UIColor(
             red: CGFloat(0.93), green: CGFloat(0.83), blue: CGFloat(0.10), alpha: CGFloat(1.0)
-//            red: CGFloat(0.10), green: CGFloat(0.30), blue: CGFloat(0.50), alpha: CGFloat(1.0)
             )
         
         // 背景の色を変える
@@ -79,9 +78,6 @@ class ViewController: UIViewController {
         let screenWidth = UIScreen.mainScreen().bounds.size.width
         //画面の高さ
         let screenHeight = UIScreen.mainScreen().bounds.size.height
-        
-
-
         
        //iPhone4s
         if(screenWidth == 320 && screenHeight == 480){
@@ -165,11 +161,11 @@ class ViewController: UIViewController {
             self.prevMonthButton.frame = CGRectMake(18, 468, CGFloat(calendarSize), CGFloat(calendarSize));
             self.nextMonthButton.frame = CGRectMake(348, 468, CGFloat(calendarSize), CGFloat(calendarSize));
         }
-//
+
         //ボタンを角丸にする
         prevMonthButton.layer.cornerRadius = CGFloat(buttonRadius)
         nextMonthButton.layer.cornerRadius = CGFloat(buttonRadius)
-//
+
         //現在の日付を取得する
         now = NSDate()
         
@@ -204,8 +200,13 @@ class ViewController: UIViewController {
         
         //初期表示時のカレンダーをセットアップする
         setupCurrentCalendar()
+        
+        let myTap = UITapGestureRecognizer(target: self, action: "tapGesture:")
     }
     
+    internal func tapGesture(sender: UITapGestureRecognizer){
+        
+    }
     //曜日ラベルの動的配置関数
     func setupCalendarLabel(array: NSArray) {
         

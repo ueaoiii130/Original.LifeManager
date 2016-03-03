@@ -196,10 +196,10 @@
 			children = (
 				5832D8E51C745E1A00FCBFD5 /* Main.storyboard */,
 				589EC5AE1C7EE43D0025F6C1 /* AddViewController.swift */,
+				589EC59F1C7994A00025F6C1 /* TableViewCell.swift */,
 				589EC59D1C7992430025F6C1 /* ToDoTableViewController.swift */,
 				5832D8E31C745E1A00FCBFD5 /* CalendarViewController.swift */,
 				589EC5B21C7F0F7E0025F6C1 /* FinishViewController.swift */,
-				589EC59F1C7994A00025F6C1 /* TableViewCell.swift */,
 				589EC5A01C7994A00025F6C1 /* TableViewCell.xib */,
 				5832D8E11C745E1A00FCBFD5 /* AppDelegate.swift */,
 				5832D8E81C745E1A00FCBFD5 /* Assets.xcassets */,
