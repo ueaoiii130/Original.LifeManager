@@ -27,7 +27,7 @@
                             </navigationBar>
                             <label autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LqR-Yr-KSj">
                                 <rect key="frame" x="0.0" y="59" width="320" height="30"/>
-                                <color key="backgroundColor" red="0.92975526891397864" green="0.93587740380256412" blue="0.0072241713540744665" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.94313330440180498" blue="0.25331217417241758" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -165,39 +165,17 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="DDd-I8-MsR">
-                                <rect key="frame" x="0.0" y="352" width="320" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="478660787.64406502">
-                                    <!--2016-03-03 01:19:47 +0000-->
-                                </date>
-                            </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFT-Z9-2Lc">
-                                <rect key="frame" x="32" y="290" width="36" height="21"/>
+                                <rect key="frame" x="32" y="299" width="36" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IgV-4R-EaR">
-                                <rect key="frame" x="32" y="315" width="138" height="30"/>
+                                <rect key="frame" x="32" y="324" width="207" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="textFieldEditing:" destination="ZAy-UI-Yt5" eventType="valueChanged" id="e4l-Zi-C4O"/>
-                                </connections>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I8e-VK-BdC">
-                                <rect key="frame" x="0.0" y="352" width="320" height="44"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <items>
-                                    <barButtonItem title="Done" id="Xbc-Be-NXV">
-                                        <color key="tintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="doneButton" destination="ZAy-UI-Yt5" id="d3H-sL-bg5"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="tintColor" red="0.92975526890000004" green="0.93587740379999995" blue="0.007224171354" alpha="1" colorSpace="calibratedRGB"/>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -212,7 +190,6 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="DatePicker" destination="DDd-I8-MsR" id="Vyh-xh-ngb"/>
                         <outlet property="DateTextField" destination="IgV-4R-EaR" id="KTB-As-v4H"/>
                         <outlet property="MemoTextField" destination="GWH-K7-Y4u" id="oBM-5s-6lX"/>
                         <outlet property="ToDoTextField" destination="8Dc-Dw-vB7" id="Vga-WT-bYb"/>

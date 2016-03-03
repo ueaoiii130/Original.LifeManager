@@ -78,7 +78,7 @@ class ToDoTableViewController: UITableViewController {
         //        }
         cell.ToDoLabel?.text = String(wordArray[indexPath.row]["ToDo"] as! String)
         cell.MemoLabel?.text = String(wordArray[indexPath.row]["Memo"] as! String)
-        cell.DateLabel?.text = String(wordArray[indexPath.row]["Date"] as! String)
+//        cell.DateLabel?.text = String(wordArray[indexPath.row]["Date"] as! String)
 
         
         
