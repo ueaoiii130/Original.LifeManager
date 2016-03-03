@@ -65,7 +65,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
     var calendarFontSize: Int!
     
 //とどくん喋らせるよう
-    var commentArray: [AnyObject] = []
+    var commentArray: [AnyObject] = [""]
     var shuffledCommentArray: [AnyObject] = []
     
     
@@ -228,14 +228,6 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
         swipeUpGesture.direction = UISwipeGestureRecognizerDirection.Up
         self.view.addGestureRecognizer(swipeUpGesture)
         
-//コメント取り出し
-//        func shuffle() {
-//            while commentArray.count > 0 {
-//                let index = Int(rand()) % commentArray.count
-//                shuffledCommentArray.append(commentArray[index])
-//                commentArray.removeAtIndex(index)
-//            }
-//        }
         
         
 //        func viewWillAppear(animated: Bool) {
@@ -284,7 +276,15 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
 //        (["TGIF!!!"]) ]
 
         
-        
+//コメント取り出し
+        func shuffle() {
+            while commentArray.count > 0 {
+                let index = Int(rand()) % commentArray.count
+                shuffledCommentArray.append(commentArray[index])
+                commentArray.removeAtIndex(index)
+            }
+        }
+
 //コメントをシャッフルして格納
         while (commentArray.count > 0) {
             let index = Int(arc4random_uniform(UInt32(commentArray.count)))
