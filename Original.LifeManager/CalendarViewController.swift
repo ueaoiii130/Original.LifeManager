@@ -12,7 +12,7 @@ import UIKit
 //CALayerクラスのインポート
 import QuartzCore
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UIGestureRecognizerDelegate {
     
     //メンバ変数の設定（配列格納用）
     var count: Int!
@@ -39,7 +39,13 @@ class ViewController: UIViewController {
     
     @IBOutlet var ToDoListButton: UIButton!
     
-    @IBOutlet var ToDokun: UIImageView!
+    @IBOutlet weak var ToDokun: UIImageView!
+    
+
+    @IBOutlet var commentLabel: UILabel!
+    
+    var number = Int(rand() % 16)
+    
     
     //カレンダーの位置決め用メンバ変数
     var calendarLabelIntervalX: Int!
@@ -58,21 +64,29 @@ class ViewController: UIViewController {
     var calendarSize: Int!
     var calendarFontSize: Int!
     
+//とどくん喋らせるよう
+    var commentArray: [AnyObject] = []
+    var shuffledCommentArray: [AnyObject] = []
+    
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
 
-        // 色を変数に用意しておく
+        
+// 色を変数に用意しておく
         let color1 = UIColor(
             red: CGFloat(0.93), green: CGFloat(0.83), blue: CGFloat(0.10), alpha: CGFloat(1.0)
             )
         
-        // 背景の色を変える
+// 背景の色を変える
         self.navigationController?.navigationBar.barTintColor = color1
+        
+        
         
 ////現在起動中のデバイスを取得（スクリーンの幅・高さ）
 //        let screenWidth  = selfwide.screenWidth()
 //        let screenHeight = selfsize.screenHeight()
+        
 //アドバイスいただいたところ変更
         //画面の幅
         let screenWidth = UIScreen.mainScreen().bounds.size.width
@@ -201,12 +215,117 @@ class ViewController: UIViewController {
         //初期表示時のカレンダーをセットアップする
         setupCurrentCalendar()
         
-        let myTap = UITapGestureRecognizer(target: self, action: "tapGesture:")
+        
+        
+//とどくん喋らせたい/////////////////////
+        //single tap
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
+        self.view.addGestureRecognizer(tapGesture)
+        
+        // single swipe up
+        let swipeUpGesture: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeUp:")
+        swipeUpGesture.numberOfTouchesRequired = 1  // number of fingers
+        swipeUpGesture.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipeUpGesture)
+        
+//コメント取り出し
+//        func shuffle() {
+//            while commentArray.count > 0 {
+//                let index = Int(rand()) % commentArray.count
+//                shuffledCommentArray.append(commentArray[index])
+//                commentArray.removeAtIndex(index)
+//            }
+//        }
+        
+        
+//        func viewWillAppear(animated: Bool) {
+//            commentArray = saveData.arrayForKey("WORD")!
+//            shuffle()
+//            commentLabel.text = shuffledCommentArray[nowNumber]["comment"] as? String
+//        }
+        
+        var commentArray = [AnyObject]()
+        commentArray.append(["ToDoListを見てみよう"])
+        commentArray.append(["The Sky is the limit!"])
+        commentArray.append(["今日は何の日？"])
+        commentArray.append(["大安の日は結婚式が多いよ"])
+        commentArray.append(["２月２９日は四年に一度しか来ないよ"])
+        commentArray.append(["体調管理は大事だよ〜"])
+        commentArray.append(["宿題は終わった？"])
+        commentArray.append(["今日はデート？？？"])
+        commentArray.append(["僕はトドだよ"])
+        commentArray.append(["おはよう"])
+        commentArray.append(["ToDoはリストの右上のボタンから追加できるよ"])
+        commentArray.append(["いい天気だねー"])
+        commentArray.append(["It's nice to take a break."])
+        commentArray.append(["Let's make it happen."])
+        commentArray.append(["Think simply."])
+        commentArray.append(["Dreams come true."])
+        commentArray.append(["TGIF!!!"])
+        
+        
+//        var commentArray = [
+//        (["ToDoListを見てみよう"]),
+//        (["The Sky is the limit!"]),
+//        (["今日は何の日？"]),
+//        (["大安の日は結婚式が多いよ"]),
+//        (["２月２９日は四年に一度しか来ないよ"]),
+//        (["体調管理は大事だよ〜"]),
+//        (["宿題は終わった？"]),
+//        (["今日はデート？？？"]),
+//        (["僕はトドだよ"]),
+//        (["おはよう"]),
+//        (["ToDoはリストの右上のボタンから追加できるよ"]),
+//        (["いい天気だねー"]),
+//        (["It's nice to take a break."]),
+//        (["Let's make it happen."]),
+//        (["Think simply."]),
+//        (["Dreams come true."]),
+//        (["TGIF!!!"]) ]
+
+        
+        
+//コメントをシャッフルして格納
+        while (commentArray.count > 0) {
+            let index = Int(arc4random_uniform(UInt32(commentArray.count)))
+            commentArray.append(commentArray[index])
+            commentArray.removeAtIndex(index)
+        }
+        choiceComment()
     }
     
-    internal func tapGesture(sender: UITapGestureRecognizer){
+    func choiceComment() {
+        commentLabel.text = commentArray[0][0] as? String
+
         
     }
+    
+//    internal func tapGesture(sender: UITapGestureRecognizer){
+//        
+    func handleTap(sender: UITapGestureRecognizer){
+        print("Tapped!")
+        
+        number++;
+        if number == 0 {
+            commentLabel.text = ""
+        }
+        if(number%2 == 0){
+            commentLabel.text = ""
+        }
+        else{
+            commentLabel.text = commentArray[0][0] as? String;("")
+            
+        }
+        
+        
+    }
+    
+    func handleSwipeUp(sender: UITapGestureRecognizer){
+        print("Swiped up!")
+        commentLabel.text = commentArray[number] as? String;("")
+    }
+    
+    
     //曜日ラベルの動的配置関数
     func setupCalendarLabel(array: NSArray) {
         
@@ -330,7 +449,7 @@ class ViewController: UIViewController {
             button.titleLabel!.font = UIFont(name: "System", size: CGFloat(calendarFontSize))
             button.layer.cornerRadius = CGFloat(buttonRadius)
             
-            //配置したボタンに押した際のアクションを設定する
+            //配置したボタンを押した際のアクションを設定する
             button.addTarget(self, action: "buttonTapped:", forControlEvents: .TouchUpInside)
             
             

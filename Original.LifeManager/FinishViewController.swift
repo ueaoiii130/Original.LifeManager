@@ -22,18 +22,21 @@ class FinishViewController: UIViewController {
     @IBOutlet var todolabel7 : UILabel!
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    
-
-    
-   
-    
-    
-//    todoLabel?.text = String(wordArray[indexPath.row]["ToDo"] as! String)
-    }
-    
-    self.presentViewController(alert, animated: true, completion:nil)
-    ToDoTextField.text = ""
+        todolabel1.text = ""
+        todolabel2.text = ""
+        todolabel3.text = ""
+        todolabel4.text = ""
+        todolabel5.text = ""
+        todolabel6.text = ""
+        todolabel7.text = ""
+        
+            
+//    self.presentViewController(alert, animated: true, completion:nil)
+//    ToDoTextField.text = ""
+}
 }

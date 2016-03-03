@@ -11,12 +11,16 @@ import UIKit
 class AddViewController: UIViewController,UITextFieldDelegate  {
     
     @IBOutlet var ToDoTextField: UITextField!
+//    var task: ToDo? = nil
     @IBOutlet var MemoTextField: UITextField!
 //    @IBOutlet var DateTextField: UITextField!
     
     @IBOutlet var DatePicker: UIDatePicker!
     
     @IBOutlet weak var DateTextField: UITextField!
+    
+//    @IBOutlet weak var todoField: UITextField!
+   
     
     var wordArray: [AnyObject] = []
     let saveData = NSUserDefaults.standardUserDefaults()
@@ -35,6 +39,10 @@ class AddViewController: UIViewController,UITextFieldDelegate  {
             wordArray = saveData.arrayForKey("WORD")!
         }
         
+        
+//        if let taskToDo = task {
+//            ToDoTextField.text = taskToDo.item
+//        }
         //datepicker上のtoolbarのdoneボタン
         toolBar = UIToolbar()
         toolBar.sizeToFit()
@@ -72,7 +80,7 @@ class AddViewController: UIViewController,UITextFieldDelegate  {
         let spaceBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace,target: self,action: "")
         
         //完了ボタンを設定
-        let toolBarBtn = UIBarButtonItem(title: "完了", style: .Done, target: self, action: "toolBarBtnPush:")
+        _ = UIBarButtonItem(title: "完了", style: .Done, target: self, action: "toolBarBtnPush:")
         
         //ツールバーにボタンを表示
         ToolBar.items = [spaceBarButton,toolBarButton]
@@ -88,7 +96,25 @@ class AddViewController: UIViewController,UITextFieldDelegate  {
     }
     
     
-
+//    @IBAction func save(sender: UIBarButtonItem) {
+//        if task != nil {
+//            editTask()
+//        } else {
+//            createTask()
+//        }
+//        navigationController!.popViewControllerAnimated(true)
+//    }
+//    
+//    func createTask() {
+//        let newTask: Todo = Todo.MR_createEntity() as! Todo
+//        newTask.item = todoField.text
+//        newTask.managedObjectContext!.MR_saveToPersistentStoreAndWait()
+//    }
+//    
+//    func editTask() {
+//        task?.item = todoTextField.text
+//        task?.managedObjectContext!.MR_saveToPersistentStoreAndWait()
+//    }
 
     @IBAction func saveWord() {
         let wordDictionary = ["ToDo":ToDoTextField.text!,"Memo":MemoTextField.text!,"Date":DateTextField.text!]
@@ -115,41 +141,6 @@ class AddViewController: UIViewController,UITextFieldDelegate  {
         DateTextField.text = ""
     }
 
-//class UIDatePickerTextField: UITextField {
-//        
-//        override  func awakeFromNib() {
-//            NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("handleFocused:"), name: UITextFieldTextDidBeginEditingNotification, object: nil)
-//        }
-//        
-//        func handleFocused(notification: NSNotification!) {
-//            var datePickerView  : UIDatePicker = UIDatePicker()
-//            datePickerView.datePickerMode = UIDatePickerMode.Date
-//            self.inputView = datePickerView
-//            datePickerView.addTarget(self, action: Selector("handleDatePicker:"), forControlEvents: UIControlEvents.ValueChanged)
-//        }
-//        
-//         func handleDatePicker(sender: UIDatePicker) {
-//            var dateFormatter = NSDateFormatter()
-//            dateFormatter.dateFormat = "yyyy/MM/dd"
-//            super.text = dateFormatter.stringFromDate(sender.date)
-//        }
-//    }
-//    //テキストフィールドが選択されたらdatepickerを表示
-//    @IBAction func textFieldEditing(sender: UITextField) {
-//        
-//        let datePickerView:UIDatePicker = UIDatePicker()
-//        datePickerView.datePickerMode = UIDatePickerMode.Date
-//        sender.inputView = datePickerView
-//        datePickerView.addTarget(self, action: Selector("datePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
-//    }
-//    
-//    //datepickerが選択されたらtextfieldに表示
-//    func datePickerValueChanged(sender:UIDatePicker) {
-//        let dateFormatter = NSDateFormatter()
-//        dateFormatter.dateFormat  = "yyyy/MM/dd";
-//        DateTextField.text = dateFormatter.stringFromDate(sender.date)
-//    }
-//    
     //toolbarのdoneボタン
     @IBAction func doneButton(){
         DateTextField.resignFirstResponder()

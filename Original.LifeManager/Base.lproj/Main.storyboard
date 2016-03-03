@@ -52,19 +52,26 @@
                                     <action selector="getPrevMonthData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qd9-o9-OLe"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fukidashi.png" translatesAutoresizingMaskIntoConstraints="NO" id="ksA-gF-aLM">
+                                <rect key="frame" x="20" y="467" width="280" height="101"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o33-9T-HI8">
+                                <rect key="frame" x="0.0" y="507" width="309" height="25"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="todoくん.png" translatesAutoresizingMaskIntoConstraints="NO" id="SE3-61-khw">
-                                <rect key="frame" x="49" y="401" width="216" height="115"/>
+                                <rect key="frame" x="52" y="389" width="216" height="115"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="RIT-oL-mje" appends="YES" id="Bym-R1-B6Q"/>
+                                    <outletCollection property="gestureRecognizers" destination="q9l-LU-P8E" appends="YES" id="wJ9-Bc-fJD"/>
                                 </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="q9l-LU-P8E" appends="YES" id="DHs-ug-TAO"/>
-                        </connections>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="カレンダー" id="5SE-11-Cft" colorLabel="IBBuiltInLabel-Yellow">
@@ -81,17 +88,14 @@
                     <connections>
                         <outlet property="ToDokun" destination="SE3-61-khw" id="DJE-Id-01k"/>
                         <outlet property="calendarBar" destination="LqR-Yr-KSj" id="FvA-aw-I06"/>
+                        <outlet property="commentLabel" destination="o33-9T-HI8" id="7YP-e2-7lC"/>
                         <outlet property="nextMonthButton" destination="3eS-n9-FGr" id="T8d-oY-whX"/>
                         <outlet property="prevMonthButton" destination="H8y-fk-nnf" id="ODR-t4-sGX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="q9l-LU-P8E">
-                    <connections>
-                        <action selector="swipePrepareSegue:" destination="BYZ-38-t0r" id="ls9-5T-g2s"/>
-                    </connections>
-                </swipeGestureRecognizer>
                 <tapGestureRecognizer id="RIT-oL-mje"/>
+                <swipeGestureRecognizer direction="right" id="q9l-LU-P8E"/>
             </objects>
             <point key="canvasLocation" x="-86" y="358"/>
         </scene>
@@ -132,7 +136,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mP-Nv-j5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="left" id="ufw-1z-w3u"/>
             </objects>
-            <point key="canvasLocation" x="312" y="358"/>
+            <point key="canvasLocation" x="309" y="358"/>
         </scene>
         <!--リストに追加-->
         <scene sceneID="dqu-3r-ZT6">
@@ -318,6 +322,7 @@
         <image name="add.png" width="573" height="1018"/>
         <image name="arrowleft.png" width="1024" height="1024"/>
         <image name="arrowright.png" width="1024" height="1024"/>
+        <image name="fukidashi.png" width="489" height="151"/>
         <image name="todoくん.png" width="1053" height="765"/>
     </resources>
 </document>

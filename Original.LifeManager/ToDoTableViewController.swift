@@ -15,6 +15,8 @@ class ToDoTableViewController: UITableViewController {
     var wordArray: [AnyObject] = []
     let saveData = NSUserDefaults.standardUserDefaults()
     
+//    @IBOutlet weak var ToDotableView: UITableView!
+//    var todoEntities: [todo]!
     
     //    @IBOutlet var plusButton: UIButton!
     //    @IBOutlet var backButton: UIButton!
@@ -24,6 +26,8 @@ class ToDoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        todoEntities = todo.MR_findAll() as? [todo]
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -59,23 +63,6 @@ class ToDoTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath) as! TableViewCell
         
-        ////        後でif文挿入
-        
-        //        if todoLabel != nil {
-        //            self.addSubView(todo!)
-        //        }
-        //        if indexPath != nil {
-        //            wordarray.removeAtIndex(index!)
-        //        }
-        
-        //        if memoTextField.text != "" && todoTextField.text != "" {
-        //
-        //            let wordDictionary =
-        //            ["Memo": MemoTextField.text!,"Todo":ToDoTextField.text!]
-        //            wordArray.append(wordDictionary)
-        //            saveData.setObject(wordArray, forKey: "WORD")
-        //
-        //        }
         
         
         cell.ToDoLabel?.text = String(wordArray[indexPath.row]["ToDo"] as! String)
@@ -90,6 +77,15 @@ class ToDoTableViewController: UITableViewController {
     }
     
     
+    //再編集のための遷移//////できれば！！！
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "edit" {
+//            let todoController = segue.destinationViewController as! AddViewController
+//            let task = todoEntities[tableView.indexPathForSelectedRow()!.row]
+//            todoController.task = task
+//        }
+//    }
+
     //セル削除ボタン
     override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
         return UITableViewCellEditingStyle.Delete
