@@ -79,8 +79,8 @@ class ToDoTableViewController: UITableViewController {
 //WordList見て直し
         let nowIndexPathDictionary: (AnyObject) =  wordArray[indexPath.row]
         
-        cell.ToDoLabel.text = nowIndexPathDictionary["ToDo"] as? String
-        cell.MemoLabel.text = nowIndexPathDictionary["Memo"] as? String
+        cell.ToDoLabel.text = nowIndexPathDictionary["todo"] as? String
+        cell.MemoLabel.text = nowIndexPathDictionary["memo"] as? String
         cell.DateLabel.text = nowIndexPathDictionary["date"] as? String
         
 //もともと

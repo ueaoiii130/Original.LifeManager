@@ -43,16 +43,17 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
     
     
     //とどくんのコメントを表示する
+    
     @IBOutlet var commentLabel: UILabel!
-    
-    var ccount = Int(rand() % 16)
-    //    var commentArray: [AnyObject] = [] //ユーザーデフォルトからとる配列
-    //    var CommentArray: [AnyObject] = []
-    
     var commentArray = [AnyObject]()
-    //    var commentArray = [AnyObject]()
+    var ccount = Int(rand() % 16)
+    
+//        var commentArray: [AnyObject] = [] //ユーザーデフォルトからとる配列
+    
+    
     
     //カレンダーの位置決め用メンバ変数
+    
     var calendarLabelIntervalX: Int!
     var calendarLabelX: Int!
     var calendarLabelY: Int!
@@ -292,37 +293,57 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
         //var commentArray = [AnyObject] () //[""]
         //    var CommentArray: [AnyObject] = []
         /////////////////////////////
-        var commentArray = [AnyObject] ()
+//                var commentArray = [
+//                "ToDoListを見てみよう"
+//                ,"The Sky is the limit!"
+//                ,"今日は何の日？"
+//                ,"大安の日は結婚式が多いよ"
+//                ,"２月２９日は四年に一度しか来ないよ"
+//                ,"体調管理は大事だよ〜"
+//                ,"宿題は終わった？"
+//                ,"今日はデート？？？"
+//                ,"僕はトドだよ"
+//                ,"おはよう"
+//                ,"ToDoの追加はリストの右上のボタン！"
+//                ,"いい天気だねー"
+//                ,"It's nice to take a break."
+//                ,"Let's make it happen."
+//                ,"Think simply."
+//                ,"Dreams come true."
+//                ,"TGIF!!!"]
+
+//        var commentArray = [AnyObject] ()
         commentArray.append(["ToDoListを見てみよう"])
         commentArray.append(["The Sky is the limit!"])
         commentArray.append(["今日は何の日？"])
-        commentArray.append(["大安の日は結婚式が多いよ"])
-        commentArray.append(["２月２９日は四年に一度しか来ないよ"])
+        commentArray.append(["大安の日は結婚式が多いんだよ"])
+        commentArray.append(["2月29日は四年に一度！"])
         commentArray.append(["体調管理は大事だよ〜"])
         commentArray.append(["宿題は終わった？"])
-        commentArray.append(["今日はデート？？？"])
+        commentArray.append(["さては今日デートでしょ"])
         commentArray.append(["僕はトドだよ"])
-        commentArray.append(["おはよう"])
-        commentArray.append(["ToDoの追加はリストの右上のボタン！"])
+        commentArray.append(["左のボタンで前月見れるよ"])
+        commentArray.append(["ToDo追加はリスト右上のボタン！"])
         commentArray.append(["いい天気だねー"])
         commentArray.append(["It's nice to take a break."])
         commentArray.append(["Let's make it happen."])
         commentArray.append(["Think simply."])
         commentArray.append(["Dreams come true."])
-        commentArray.append(["TGIF!!!"])
+        commentArray.append(["右のボタンで来月に変わるよ"])
        
         
             commentLabel.text = ""
         
-        //        while (commentArray.count > 0) {
-        //                            let index = Int(arc4random_uniform(UInt32(commentArray.count - 1)))
-        //                            commentArray.append(commentArray[index])
-        //                            commentArray.removeAtIndex(index)
-        //                        }
+        
+//        while (commentArray.count > 0) {
+//            let index = Int(arc4random_uniform(UInt32(commentArray.count)))
+//            commentArray.append(commentArray[index])
+////            commentArray.removeAtIndex(index)
+//        }
+
+        
         choiceComment()
-        //        if saveData.arrayForKey("COMMENT") != nil {
-        //            commentArray = saveData.arrayForKey("COMMENT")!
-        //        }
+        
     }   ///////////ViewDidload終わり//////////////////
     
     //カレンダーを生成する関数
@@ -520,14 +541,9 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
         setupCalendarTitleLabel()
     }
     
-    //カレンダーボタンをタップした時のアクション
+    //日付ボタンをタップすると日付を教えてくれる
     func buttonTapped(button: UIButton){
-        
-        //@todo:画面遷移等の処理を書くことができます。
-        //        dateFormat.dateFormat = "yyyy年MM月dd日"
-        //        commentLabel.text = dateFormat.stringFromDate(nowDate)
-        //        self.commentLabel.delegate = self
-        
+        commentLabel.text = "今日は\(year)年\(month)月\(button.tag)日だよ！"
         //コンソール表示
         print("\(year)年\(month)月\(button.tag)日が選択されました！")
         
@@ -581,88 +597,36 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     
-    //パースさんより
-    // コメントをランダムに並び替える関数
-    //    func shuffle() -> [[AnyObject]] {
-    //        // そのため一切変えずに、この関数の中だけで有効なローカル変数 temporaryCommentArray を宣言し、
-    //        // その temporaryCommentArray だけについて removeAtIndex() などの変更操作を行なう
-    //        var temporaryCommentArray = commentArray
-    //
-    //        // [AnyObject] は 　「「String型の変数」の配列」を表す
-    //        // [ [AnyObject] ] は 「「「String型の変数」の配列」の配列」を表す
-    //        var temporaryCommentArray : [ [AnyObject] ] = [] // = [] は 要素が入っていない配列として初期化することを表す
-    //
-    //        while temporaryCommentArray.count > 0 {
-    //
-    //            let temporaryIndex = Int(rand()) % temporaryCommentArray.count
-    //
-    //            // as! で型を変換する
-    //            temporaryCommentArray.append(temporaryCommentArray[temporaryIndex] as! [AnyObject])
-    //
-    //            // 次の while ループに移る前に、「今回使ったセリフ」を選ぶ対象から外す
-    //            temporaryCommentArray.removeAtIndex(temporaryIndex)
-    //        }
-    //
-    //        // CommentArray に shuffle 結果を入れたければ、以下のコメントアウトを外す
-    //                     CommentArray = temporaryCommentArray
-    //
-    //
-    //        //コメントをシャッフルして格納
-    //        print(commentArray)
-    //        commentArray = shuffle()
-    //        print(commentArray)
-    //
-    //        return temporaryCommentArray
-    //
-    //
-    //    }
-    //コメント取り出し
-    //            func shuffle () {
-    //                while commentArray . count > 0 {
-    //                    let index = Int(rand()) % commentArray.count
-    //                    commentArray.append(commentArray[index])
-    //                    commentArray.removeAtIndex(index)
-    //                }
     //            }
     
     
     
     func choiceComment() {
     }
-//commentLabel.text = commentArray[ccount] as? String
-        //         次の while ループに移る前に、「今回使ったセリフ」を選ぶ対象から外す
-        //                    commentArray.removeAtIndex(Index)
-    
-    //
-    
-    //    internal func tapGesture(sender: UITapGestureRecognizer){
-    //
-    
-    //override func viewWillAppear(animated: Bool) {
-    //                    commentArray = saveData.arrayForKey("COMMENT")!
-    //                    shuffle()
-    //                    commentLabel.text = CommentArray[ccount]["comment"] as? String
-    //                }
     
     func handleTap(sender: UITapGestureRecognizer){
         print("Tapped!")
-        
-        let ccount = Int( arc4random_uniform(16) )
+         ccount = Int(rand() % 16)
+    
 
-       
-        if ccount == 0{
-            commentLabel.text = ""
-        }
-        
+    
         if(ccount % 2 == 0){
             commentLabel.text = ""
+        }
+        if ccount  == 1{
+            commentLabel.text = commentArray[ccount][0] as? String
+            
         }
         else{
             commentLabel.text = commentArray[ccount] [0] as? String
             
         }
+
     }
-    
+
+
+
+
     func handleSwipeUp(sender: UITapGestureRecognizer){
         print("Swiped up!")
         commentLabel.text = "おはよう！"
