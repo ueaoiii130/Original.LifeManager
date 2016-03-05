@@ -10,61 +10,46 @@ import UIKit
 
 class FinishViewController: UIViewController {
     
-    var wordArray: [AnyObject] = []
+    @IBOutlet var todoLabel1 : UILabel!
+    @IBOutlet var todoLabel2 : UILabel!
+    
+    
+    var wordArray: [AnyObject] = [] //ユーザデフォルトからとる
+    var shuffledWordArray: [AnyObject] = [] //シャッフルされた配列
+    var nowNumber : Int = 0
+
     let saveData = NSUserDefaults.standardUserDefaults()
-    
-    
-    
-    @IBOutlet var todolabel1 : UILabel!
-    @IBOutlet var todolabel2 : UILabel!
-    @IBOutlet var todolabel3 : UILabel!
-    @IBOutlet var todolabel4 : UILabel!
-    @IBOutlet var todolabel5 : UILabel!
-    @IBOutlet var todolabel6 : UILabel!
-    @IBOutlet var todolabel7 : UILabel!
-    
+
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for var i = 0; i < 7; ++i {
-            
-            
-        saveData.setObject(wordArray, forKey: "WORD")
-            
-        todolabel1.text = ""
-        todolabel2.text = ""
-        todolabel3.text = ""
-        todolabel4.text = ""
-        todolabel5.text = ""
-        todolabel6.text = ""
-        todolabel7.text = ""
-            
-        }
-            
-//    self.presentViewController(alert, animated: true, completion:nil)
-//    ToDoTextField.text = ""
-}
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        if saveData.arrayForKey("TODO") != nil {
-            wordArray = saveData.arrayForKey("TODO")!
-            print(wordArray)
-        }
-        
-        //        tableView.reloadData()
     }
-
-    func label(sender:UILabel) {
-        var selected: [Bool] = []
-        for i in 0 ..< wordArray.count {
-            selected.append(false)
+    //Viewが現れた時に出てくる
+    override func viewWillAppear(animated: Bool){
+        if saveData.arrayForKey("WORD") != nil {
+            wordArray = saveData.arrayForKey("WORD")!
         }
         
-//        selected[sender.tag] = sender.label
+        wordArray = saveData.arrayForKey("WORD")!
+        shuffle()
+        
+        todoLabel1!.text = shuffledWordArray[nowNumber]["todo"]as? String
+            }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func shuffle() {
+        while wordArray.count > 0 {
+            let index = Int(arc4random_uniform(UInt32(wordArray.count)))
+            shuffledWordArray.append(wordArray[index])
+            wordArray.removeAtIndex(index)
+        }
     }
 
 

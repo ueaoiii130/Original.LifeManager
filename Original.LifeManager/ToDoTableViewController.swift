@@ -137,16 +137,6 @@ class ToDoTableViewController: UITableViewController {
     }
 
     
-//移動まえ
-//    override func viewWillAppear(animated: Bool) {
-//        super.viewWillAppear(animated)
-//        if saveData.arrayForKey("WORD") != nil {
-//            wordArray = saveData.arrayForKey("WORD")!
-//        
-//        }
-//        
-//        tableView.reloadData()
-//    }
     
     
     override func didReceiveMemoryWarning() {
@@ -186,13 +176,6 @@ class ToDoTableViewController: UITableViewController {
 //    }
 
     
-   
-    
-    
-    //        override func viewDidLoad() {
-    //            super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    
     let barHeight: CGFloat = UIApplication.sharedApplication().statusBarFrame.size.height
     
     //            let displayWidth = self.view.frame.width
@@ -204,7 +187,7 @@ class ToDoTableViewController: UITableViewController {
     
     
     //
-    // ⭐️ここがポイント　セルの選択状態を保持します
+    // セルの選択状態を保持します
     //    for in文で配列の数だけチェックボックス表示
     func checked(sender:CTCheckbox) {
         var selected: [Bool] = []
@@ -265,11 +248,11 @@ class ToDoTableViewController: UITableViewController {
 //        // tableCell の ID で UITableViewCell のインスタンスを生成
 ////        let cell = table.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath)
 //        
-//        ToDolabel.text = String(wordArray[indexPath.row]["ToDo"] as! String)
+//        todolabel.text = String(wordArray[indexPath.row]["todo"] as! String)
 //
 //        // Tag番号 1 で UIImageView インスタンスの生成
 //        let imageView = table.viewWithTag(1) as! UIImageView
-//        imageView.image = img
+//        
 //        
 //        // Tag番号 ２ で UILabel インスタンスの生成
 //        let label1 = table.viewWithTag(2) as! UILabel

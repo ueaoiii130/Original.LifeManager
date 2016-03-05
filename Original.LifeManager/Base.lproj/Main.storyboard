@@ -224,80 +224,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aQp-ml-Lvj">
-                                <rect key="frame" x="165" y="629" width="45" height="30"/>
-                                <state key="normal" title="カメラ"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y95-Wc-pa6">
-                                <rect key="frame" x="292" y="28" width="75" height="30"/>
-                                <state key="normal" title="カレンダー"/>
-                                <connections>
-                                    <segue destination="Rmg-nC-2ay" kind="unwind" unwindAction="calender:" id="Tgh-ap-RYh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bg6-WX-tGy">
-                                <rect key="frame" x="14" y="20" width="45" height="30"/>
-                                <state key="normal" title="リスト"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGJ-Fo-bio">
-                                <rect key="frame" x="51" y="199" width="254" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0m-4W-JtM">
-                                <rect key="frame" x="14" y="230" width="157" height="49"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqb-X4-ftY">
-                                <rect key="frame" x="78" y="358" width="227" height="47"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
-                                <color key="textColor" red="0.92975526890000004" green="0.93587740379999995" blue="0.007224171354" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gHC-VE-DgV">
-                                <rect key="frame" x="7" y="402" width="306" height="58"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.64331896550000001" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K9E-C4-oe6">
-                                <rect key="frame" x="27" y="473" width="278" height="43"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVM-O1-oF3">
-                                <rect key="frame" x="0.0" y="287" width="320" height="39.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.64331896551724133" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kj4-Af-tTR">
-                                <rect key="frame" x="7" y="72" width="298" height="68"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fukidashi2.png" translatesAutoresizingMaskIntoConstraints="NO" id="yeo-0k-okS">
+                                <rect key="frame" x="-42" y="149" width="464" height="290"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="todoくん.png" translatesAutoresizingMaskIntoConstraints="NO" id="D9m-G7-fgn">
+                                <rect key="frame" x="31" y="373" width="246" height="175"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kj4-Af-tTR">
+                                <rect key="frame" x="28" y="174" width="253" height="157"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="38"/>
-                                <color key="textColor" red="1" green="0.94313330439999998" blue="0.25331217420000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.88976362180000002" green="0.88837004610000003" blue="0.0025264653199999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="とどラベル.png" translatesAutoresizingMaskIntoConstraints="NO" id="cSd-Ke-zhv">
+                                <rect key="frame" x="-12" y="32" width="224" height="119"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="aOo-vS-DqY"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="todolabel1" destination="Kj4-Af-tTR" id="BrN-J4-ufd"/>
-                        <outlet property="todolabel2" destination="GVM-O1-oF3" id="8pE-Ed-qVb"/>
-                        <outlet property="todolabel3" destination="T0m-4W-JtM" id="dvN-2T-3hH"/>
-                        <outlet property="todolabel4" destination="dqb-X4-ftY" id="0qV-Of-ksK"/>
-                        <outlet property="todolabel5" destination="kGJ-Fo-bio" id="VyA-Ba-AnY"/>
-                        <outlet property="todolabel6" destination="gHC-VE-DgV" id="VpI-eo-0pr"/>
-                        <outlet property="todolabel7" destination="K9E-C4-oe6" id="h9w-dH-bh2"/>
+                        <outlet property="todoLabel1" destination="Kj4-Af-tTR" id="Sjy-Fm-Ajo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cwE-FQ-mx9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Rmg-nC-2ay" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="707" y="358"/>
         </scene>
@@ -326,6 +277,8 @@
         <image name="arrowleft.png" width="1024" height="1024"/>
         <image name="arrowright.png" width="1024" height="1024"/>
         <image name="fukidashi.png" width="489" height="151"/>
+        <image name="fukidashi2.png" width="766" height="533"/>
         <image name="todoくん.png" width="1053" height="765"/>
+        <image name="とどラベル.png" width="678" height="174"/>
     </resources>
 </document>

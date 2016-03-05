@@ -130,8 +130,6 @@ class AddViewController: UIViewController,UITextFieldDelegate  {
 
     @IBAction func saveWord() {
         let wordDictionary = ["todo":ToDoTextField.text!,"memo":MemoTextField.text!,"date":DateTextField.text!]
-
-//        let wordDictionary: Dictionary  = ["ToDo":ToDoTextField.text!,"Memo":MemoTextField.text!,"Date":DateTextField.text!]
         
         wordArray.append(wordDictionary)
         
