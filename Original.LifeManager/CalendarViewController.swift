@@ -292,7 +292,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
         //var commentArray = [AnyObject] () //[""]
         //    var CommentArray: [AnyObject] = []
         /////////////////////////////
-        //        var commentArray = [AnyObject]([""])
+        var commentArray = [AnyObject] ()
         commentArray.append(["ToDoListを見てみよう"])
         commentArray.append(["The Sky is the limit!"])
         commentArray.append(["今日は何の日？"])
@@ -310,7 +310,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
         commentArray.append(["Think simply."])
         commentArray.append(["Dreams come true."])
         commentArray.append(["TGIF!!!"])
-        print(commentArray)
+       
         
             commentLabel.text = ""
         

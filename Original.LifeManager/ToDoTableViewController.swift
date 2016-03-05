@@ -15,7 +15,6 @@ class ToDoTableViewController: UITableViewController {
     var wordArray: [AnyObject] = []
     let saveData = NSUserDefaults.standardUserDefaults()
     
-//    @IBOutlet weak var ToDotableView: UITableView!
 //再編集のための
 //    var todoEntities: [todo]!
     
@@ -30,8 +29,8 @@ class ToDoTableViewController: UITableViewController {
         
 //再？        todoEntities = todo.MR_findAll() as? [todo]
         
-//        tableView.delegate = self
-//        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         
         //TableViewCellを使えるようにする
         tableView.registerNib(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "todoCell")
