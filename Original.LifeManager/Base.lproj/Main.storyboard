@@ -107,6 +107,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="h0Z-Ry-hTS" id="wu0-jZ-bHe"/>
+                            <outlet property="delegate" destination="h0Z-Ry-hTS" id="JgR-Uq-jNn"/>
+                        </connections>
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="ToDoList" id="21y-Bi-beM">
@@ -134,7 +138,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2mP-Nv-j5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="ufw-1z-w3u"/>
             </objects>
             <point key="canvasLocation" x="309" y="358"/>
         </scene>

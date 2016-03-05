@@ -16,6 +16,7 @@ class ToDoTableViewController: UITableViewController {
     let saveData = NSUserDefaults.standardUserDefaults()
     
 //    @IBOutlet weak var ToDotableView: UITableView!
+//再編集のための
 //    var todoEntities: [todo]!
     
     //    @IBOutlet var plusButton: UIButton!
@@ -27,34 +28,47 @@ class ToDoTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        todoEntities = todo.MR_findAll() as? [todo]
+//再？        todoEntities = todo.MR_findAll() as? [todo]
         
-        tableView.delegate = self
-        tableView.dataSource = self
+//        tableView.delegate = self
+//        tableView.dataSource = self
         
         //TableViewCellを使えるようにする
-        tableView.registerNib(UINib(nibName: "TableViewCell", bundle:nil), forCellReuseIdentifier: "todoCell")
+        tableView.registerNib(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "todoCell")
         
         // 編集ボタンを右上に配置
         navigationItem.rightBarButtonItem = editButtonItem()
         
-//        let modoru = UIBarButtonItem(title: "back", style: UIBarButtonItemStyle.Plain,target:self, action: "addTapped")
-//        navigationItem.setLeftBarButtonItem(modoru, animated: true)
+        if saveData.arrayForKey("WORD") != nil {
+            wordArray = saveData.arrayForKey("WORD")!
+            print(wordArray)
+        }
         
-        
+        tableView.reloadData()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
+//移動後
+        override func viewWillAppear(animated: Bool) {
+            super.viewWillAppear(animated)
+            if saveData.arrayForKey("WORD") != nil {
+                wordArray = saveData.arrayForKey("WORD")!
     
-    //セクションの数を設定する
+            }
+    
+            tableView.reloadData()
+        }
+
+    //セクションの数を決める
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    //セルの個数を指定する
+    //セルの個数を決める
     override func tableView(tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         return wordArray.count
     }
@@ -62,14 +76,20 @@ class ToDoTableViewController: UITableViewController {
     //テーブルセルにデータをセットする
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath) as! TableViewCell
-        
-        
-        
-        cell.ToDoLabel?.text = String(wordArray[indexPath.row]["ToDo"] as! String)
-        cell.MemoLabel?.text = String(wordArray[indexPath.row]["Memo"] as! String)
-//        cell.DateLabel?.text = String(wordArray[indexPath.row]["Date"] as! String)
 
+//WordList見て直し
+        let nowIndexPathDictionary: (AnyObject) =  wordArray[indexPath.row]
+        
+        cell.ToDoLabel.text = nowIndexPathDictionary["ToDo"] as? String
+        cell.MemoLabel.text = nowIndexPathDictionary["Memo"] as? String
+        cell.DateLabel.text = nowIndexPathDictionary["date"] as? String
+        
+//もともと
+//        cell.ToDoLabel?.text = String(wordArray[indexPath.row]["ToDo"])
+//        cell.MemoLabel?.text = String(wordArray[indexPath.row]["Memo"])
+//        cell.DateLabel?.text = String(wordArray[indexPath.row]["Date"])
 
+        //チェックボックスのタグ
         cell.checkbox.tag = indexPath.row
         cell.checkbox.addTarget(self, action: "checked:", forControlEvents: .ValueChanged)
         cell.setData()
@@ -99,16 +119,16 @@ class ToDoTableViewController: UITableViewController {
         saveData.setObject(wordArray, forKey: "WORD")
         
     }
-//編集ボタンを出す
+    //編集ボタンを出す
     override func setEditing(editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         tableView.editing = editing
     }
-//移動可能に
+    //セル移動可能に
     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
-//移動後の処理
+    //セル移動後の処理
     override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
         let todoCell = wordArray[sourceIndexPath.row]
        
@@ -118,15 +138,17 @@ class ToDoTableViewController: UITableViewController {
     }
 
     
+//移動まえ
+//    override func viewWillAppear(animated: Bool) {
+//        super.viewWillAppear(animated)
+//        if saveData.arrayForKey("WORD") != nil {
+//            wordArray = saveData.arrayForKey("WORD")!
+//        
+//        }
+//        
+//        tableView.reloadData()
+//    }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        if saveData.arrayForKey("WORD") != nil {
-            wordArray = saveData.arrayForKey("WORD")!
-        }
-        tableView.reloadData()
-    }
-       
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -148,16 +170,13 @@ class ToDoTableViewController: UITableViewController {
     
     //ボタンを押した時の移動
     @IBAction func plusButton(seque: UIStoryboardSegue) {
-        
     }
-    
     @IBAction func backButton(){
         navigationController?.popToRootViewControllerAnimated(true)
     }
-    
     @IBAction func doButton(seque: UIStoryboardSegue) {
-        
     }
+    
 //スワイプ
    /* @IBAction func swipeSegue(sender: UISwipeGestureRecognizer) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -168,25 +187,7 @@ class ToDoTableViewController: UITableViewController {
 //    }
 
     
-    //チェックボックス挑戦！
-    // テーブルビュー
-    //        var tableView: UITableView!
-    
-    // テーブルデータ
-    //        var tableData = [
-    //            "データ1",
-    //            "データ2",
-    //            "データ3",
-    //            "データ4",
-    //            "データ5",
-    //        ]
-    // 選択中のセル
-    //        var selected = [
-    //    for (var index = numberOfRowsInSection section:Int) -> Int {
-    ////            println("\(name)です。")
-    //
-    //    ]
-    //    }
+   
     
     
     //        override func viewDidLoad() {
@@ -220,7 +221,7 @@ class ToDoTableViewController: UITableViewController {
         var checkbox = CTCheckbox()
         
         func setData() -> Void {
-            ////             ⭐️ここもポイント　チェックボックスを追加します
+            ////チェックボックスを追加します
             checkbox.frame = CGRectMake(self.frame.width - 44, 0, 22, self.frame.height)
             checkbox.checkboxColor = UIColor.blackColor()
             checkbox.checkboxSideLength = 22

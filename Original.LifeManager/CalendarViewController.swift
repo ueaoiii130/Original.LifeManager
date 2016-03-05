@@ -41,11 +41,16 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
     
     @IBOutlet weak var ToDokun: UIImageView!
     
-
+    
+    //とどくんのコメントを表示する
     @IBOutlet var commentLabel: UILabel!
     
-    var number = Int(rand() % 16)
+    var ccount = Int(rand() % 16)
+    //    var commentArray: [AnyObject] = [] //ユーザーデフォルトからとる配列
+    //    var CommentArray: [AnyObject] = []
     
+    var commentArray = [AnyObject]()
+    //    var commentArray = [AnyObject]()
     
     //カレンダーの位置決め用メンバ変数
     var calendarLabelIntervalX: Int!
@@ -64,36 +69,35 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
     var calendarSize: Int!
     var calendarFontSize: Int!
     
-//とどくん喋らせるよう
-    var commentArray: [AnyObject] = [""]
-    var shuffledCommentArray: [AnyObject] = []
     
+    //    let saveData = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
-// 色を変数に用意しておく
+        
+        // 色を変数に用意しておく
         let color1 = UIColor(
             red: CGFloat(0.93), green: CGFloat(0.83), blue: CGFloat(0.10), alpha: CGFloat(1.0)
-            )
+        )
         
-// 背景の色を変える
+        // 背景の色を変える
         self.navigationController?.navigationBar.barTintColor = color1
         
         
         
-////現在起動中のデバイスを取得（スクリーンの幅・高さ）
-//        let screenWidth  = selfwide.screenWidth()
-//        let screenHeight = selfsize.screenHeight()
+        ////現在起動中のデバイスを取得（スクリーンの幅・高さ）
+        //        let screenWidth  = selfwide.screenWidth()
+        //        let screenHeight = selfsize.screenHeight()
         
-//アドバイスいただいたところ変更
+        //アドバイスいただいたところ変更
+        //////////////現在起動中のデバイスを取得（スクリーンの幅・高さ///////////////////
         //画面の幅
         let screenWidth = UIScreen.mainScreen().bounds.size.width
         //画面の高さ
         let screenHeight = UIScreen.mainScreen().bounds.size.height
         
-       //iPhone4s
+        //iPhone4s
         if(screenWidth == 320 && screenHeight == 480){
             
             calendarLabelIntervalX = 5;
@@ -111,7 +115,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
             calendarY              = 45;
             calendarSize           = 40;
             calendarFontSize       = 17;
-        
+            
             //iPhone5またはiPhone5s
         }else if (screenWidth == 320 && screenHeight == 568){
             
@@ -171,15 +175,16 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
             calendarY              = 55;
             calendarSize           = 50;
             calendarFontSize       = 21;
-            
+            ///////////////////////////////////////////////////////////////////////
+            //ボタンの位置決める
             self.prevMonthButton.frame = CGRectMake(18, 468, CGFloat(calendarSize), CGFloat(calendarSize));
             self.nextMonthButton.frame = CGRectMake(348, 468, CGFloat(calendarSize), CGFloat(calendarSize));
         }
-
+        
         //ボタンを角丸にする
         prevMonthButton.layer.cornerRadius = CGFloat(buttonRadius)
         nextMonthButton.layer.cornerRadius = CGFloat(buttonRadius)
-
+        
         //現在の日付を取得する
         now = NSDate()
         
@@ -206,7 +211,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
         //空の配列を作成する（カレンダーデータの格納用）
         mArray = NSMutableArray()
         
-        //曜日ラベル初期定義
+        //曜日ラベル定義
         let monthName:[String] = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"]
         
         //曜日ラベルを動的に配置
@@ -214,118 +219,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
         
         //初期表示時のカレンダーをセットアップする
         setupCurrentCalendar()
-        
-        
-        
-//とどくん喋らせたい/////////////////////
-        //single tap
-        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:")
-        self.view.addGestureRecognizer(tapGesture)
-        
-        // single swipe up
-        let swipeUpGesture: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeUp:")
-        swipeUpGesture.numberOfTouchesRequired = 1  // number of fingers
-        swipeUpGesture.direction = UISwipeGestureRecognizerDirection.Up
-        self.view.addGestureRecognizer(swipeUpGesture)
-        
-        
-        
-//        func viewWillAppear(animated: Bool) {
-//            commentArray = saveData.arrayForKey("WORD")!
-//            shuffle()
-//            commentLabel.text = shuffledCommentArray[nowNumber]["comment"] as? String
-//        }
-        
-        var commentArray = [AnyObject]()
-        commentArray.append(["ToDoListを見てみよう"])
-        commentArray.append(["The Sky is the limit!"])
-        commentArray.append(["今日は何の日？"])
-        commentArray.append(["大安の日は結婚式が多いよ"])
-        commentArray.append(["２月２９日は四年に一度しか来ないよ"])
-        commentArray.append(["体調管理は大事だよ〜"])
-        commentArray.append(["宿題は終わった？"])
-        commentArray.append(["今日はデート？？？"])
-        commentArray.append(["僕はトドだよ"])
-        commentArray.append(["おはよう"])
-        commentArray.append(["ToDoはリストの右上のボタンから追加できるよ"])
-        commentArray.append(["いい天気だねー"])
-        commentArray.append(["It's nice to take a break."])
-        commentArray.append(["Let's make it happen."])
-        commentArray.append(["Think simply."])
-        commentArray.append(["Dreams come true."])
-        commentArray.append(["TGIF!!!"])
-        
-        
-//        var commentArray = [
-//        (["ToDoListを見てみよう"]),
-//        (["The Sky is the limit!"]),
-//        (["今日は何の日？"]),
-//        (["大安の日は結婚式が多いよ"]),
-//        (["２月２９日は四年に一度しか来ないよ"]),
-//        (["体調管理は大事だよ〜"]),
-//        (["宿題は終わった？"]),
-//        (["今日はデート？？？"]),
-//        (["僕はトドだよ"]),
-//        (["おはよう"]),
-//        (["ToDoはリストの右上のボタンから追加できるよ"]),
-//        (["いい天気だねー"]),
-//        (["It's nice to take a break."]),
-//        (["Let's make it happen."]),
-//        (["Think simply."]),
-//        (["Dreams come true."]),
-//        (["TGIF!!!"]) ]
-
-        
-//コメント取り出し
-        func shuffle() {
-            while commentArray.count > 0 {
-                let index = Int(rand()) % commentArray.count
-                shuffledCommentArray.append(commentArray[index])
-                commentArray.removeAtIndex(index)
-            }
-        }
-
-//コメントをシャッフルして格納
-        while (commentArray.count > 0) {
-            let index = Int(arc4random_uniform(UInt32(commentArray.count)))
-            commentArray.append(commentArray[index])
-            commentArray.removeAtIndex(index)
-        }
-        choiceComment()
     }
-    
-    func choiceComment() {
-        commentLabel.text = commentArray[0][0] as? String
-
-        
-    }
-    
-//    internal func tapGesture(sender: UITapGestureRecognizer){
-//        
-    func handleTap(sender: UITapGestureRecognizer){
-        print("Tapped!")
-        
-        number++;
-        if number == 0 {
-            commentLabel.text = ""
-        }
-        if(number%2 == 0){
-            commentLabel.text = ""
-        }
-        else{
-            commentLabel.text = commentArray[0][0] as? String;("")
-            
-        }
-        
-        
-    }
-    
-    func handleSwipeUp(sender: UITapGestureRecognizer){
-        print("Swiped up!")
-        commentLabel.text = commentArray[number] as? String;("")
-    }
-    
-    
     //曜日ラベルの動的配置関数
     func setupCalendarLabel(array: NSArray) {
         
@@ -357,10 +251,10 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
                 
                 //RGBカラーの設定は小数値をCGFloat型にしてあげる
                 calendarBaseLabel.textColor = UIColor(
-//                    red: CGFloat(0.400), green: CGFloat(0.471), blue: CGFloat(0.980), alpha: CGFloat(1.0)
+                    //                    red: CGFloat(0.400), green: CGFloat(0.471), blue: CGFloat(0.980), alpha: CGFloat(1.0)
                     red: CGFloat(0.15), green: CGFloat(0.25), blue: CGFloat(0.55), alpha: CGFloat(1.0)
-//                    red:0, green:0, blue:0.4, alpha:1.0
-
+                    //                    red:0, green:0, blue:0.4, alpha:1.0
+                    
                 )
                 
                 //平日の場合は灰色を指定
@@ -376,7 +270,60 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
             calendarBaseLabel.font = UIFont(name: "System", size: CGFloat(calendarLabelFontSize))
             self.view.addSubview(calendarBaseLabel)
         }
-    }
+        
+        //////////////////////////////////////////////////
+        //////////////とどくん喋らせたい/////////////////////
+        //single tap/二行目つけたし
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "handleTap:");
+        tapGesture.numberOfTapsRequired = 1;
+        self.view.addGestureRecognizer(tapGesture);
+        
+        // single swipe up
+        let swipeUpGesture: UISwipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeUp:");
+        swipeUpGesture.numberOfTouchesRequired = 1;  //指の数
+        swipeUpGesture.direction = UISwipeGestureRecognizerDirection.Up
+        self.view.addGestureRecognizer(swipeUpGesture);
+        
+        
+        
+        
+        
+        //とどくん喋らせるよう///////////
+        //var commentArray = [AnyObject] () //[""]
+        //    var CommentArray: [AnyObject] = []
+        /////////////////////////////
+        //        var commentArray = [AnyObject]([""])
+        commentArray.append(["ToDoListを見てみよう"])
+        commentArray.append(["The Sky is the limit!"])
+        commentArray.append(["今日は何の日？"])
+        commentArray.append(["大安の日は結婚式が多いよ"])
+        commentArray.append(["２月２９日は四年に一度しか来ないよ"])
+        commentArray.append(["体調管理は大事だよ〜"])
+        commentArray.append(["宿題は終わった？"])
+        commentArray.append(["今日はデート？？？"])
+        commentArray.append(["僕はトドだよ"])
+        commentArray.append(["おはよう"])
+        commentArray.append(["ToDoの追加はリストの右上のボタン！"])
+        commentArray.append(["いい天気だねー"])
+        commentArray.append(["It's nice to take a break."])
+        commentArray.append(["Let's make it happen."])
+        commentArray.append(["Think simply."])
+        commentArray.append(["Dreams come true."])
+        commentArray.append(["TGIF!!!"])
+        print(commentArray)
+        
+            commentLabel.text = ""
+        
+        //        while (commentArray.count > 0) {
+        //                            let index = Int(arc4random_uniform(UInt32(commentArray.count - 1)))
+        //                            commentArray.append(commentArray[index])
+        //                            commentArray.removeAtIndex(index)
+        //                        }
+        choiceComment()
+        //        if saveData.arrayForKey("COMMENT") != nil {
+        //            commentArray = saveData.arrayForKey("COMMENT")!
+        //        }
+    }   ///////////ViewDidload終わり//////////////////
     
     //カレンダーを生成する関数
     func generateCalendar(){
@@ -434,12 +381,12 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
             }else if(i % 7 == 6){
                 calendarBackGroundColor = UIColor(
                     red: CGFloat(0.15), green: CGFloat(0.25), blue: CGFloat(0.55), alpha: CGFloat(1.0)
-//                    red: CGFloat(0.400), green: CGFloat(0.471), blue: CGFloat(0.980), alpha: CGFloat(1.0)
+                    //                    red: CGFloat(0.400), green: CGFloat(0.471), blue: CGFloat(0.980), alpha: CGFloat(1.0)
                 )
             }else{
                 
                 calendarBackGroundColor = UIColor.lightGrayColor()
-//
+                //
             }
             
             
@@ -577,9 +524,13 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
     func buttonTapped(button: UIButton){
         
         //@todo:画面遷移等の処理を書くことができます。
+        //        dateFormat.dateFormat = "yyyy年MM月dd日"
+        //        commentLabel.text = dateFormat.stringFromDate(nowDate)
+        //        self.commentLabel.delegate = self
         
         //コンソール表示
         print("\(year)年\(month)月\(button.tag)日が選択されました！")
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -587,24 +538,24 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     //前の月のボタンを押した際のアクション
-    @IBAction func getPrevMonthData(sender: UIButton) {
+    func getPrevMonthData(sender: UIButton) {
         prevCalendarSettings()
     }
     
     //次の月のボタンを押した際のアクション
-    @IBAction func getNextMonthData(sender: UIButton) {
+    func getNextMonthData(sender: UIButton) {
         nextCalendarSettings()
     }
-//左スワイプで前月を表示
-//    @IBAction func swipePrevCalendar(sender: UISwipeGestureRecognizer) {
-//        prevCalendarSettings()
-//    }
+    //左スワイプで前月を表示
+    //    @IBAction func swipePrevCalendar(sender: UISwipeGestureRecognizer) {
+    //        prevCalendarSettings()
+    //    }
     
-//右スワイプで次月を表示
-//    @IBAction func swipeNextCalendar(sender: UISwipeGestureRecognizer) {
-//        nextCalendarSettings()
-//        //prepareForSegue("", sender: nil)
-//    }
+    //右スワイプで次月を表示
+    //    @IBAction func swipeNextCalendar(sender: UISwipeGestureRecognizer) {
+    //        nextCalendarSettings()
+    //        //prepareForSegue("", sender: nil)
+    //    }
     
     //前月を表示するメソッド
     func prevCalendarSettings() {
@@ -622,41 +573,124 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
         setupCalendarTitleLabel()
     }
     
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-
-
-//ToDoViewControllerまで行った時にカレンダー画面まで戻ってくるためのメソッド
-    @IBAction func calender(segue: UIStoryboardSegue){
-        
-}
     
-//todolistに行く
-    @IBAction func todolistButton(seque: UIStoryboardSegue) {
+    //パースさんより
+    // コメントをランダムに並び替える関数
+    //    func shuffle() -> [[AnyObject]] {
+    //        // そのため一切変えずに、この関数の中だけで有効なローカル変数 temporaryCommentArray を宣言し、
+    //        // その temporaryCommentArray だけについて removeAtIndex() などの変更操作を行なう
+    //        var temporaryCommentArray = commentArray
+    //
+    //        // [AnyObject] は 　「「String型の変数」の配列」を表す
+    //        // [ [AnyObject] ] は 「「「String型の変数」の配列」の配列」を表す
+    //        var temporaryCommentArray : [ [AnyObject] ] = [] // = [] は 要素が入っていない配列として初期化することを表す
+    //
+    //        while temporaryCommentArray.count > 0 {
+    //
+    //            let temporaryIndex = Int(rand()) % temporaryCommentArray.count
+    //
+    //            // as! で型を変換する
+    //            temporaryCommentArray.append(temporaryCommentArray[temporaryIndex] as! [AnyObject])
+    //
+    //            // 次の while ループに移る前に、「今回使ったセリフ」を選ぶ対象から外す
+    //            temporaryCommentArray.removeAtIndex(temporaryIndex)
+    //        }
+    //
+    //        // CommentArray に shuffle 結果を入れたければ、以下のコメントアウトを外す
+    //                     CommentArray = temporaryCommentArray
+    //
+    //
+    //        //コメントをシャッフルして格納
+    //        print(commentArray)
+    //        commentArray = shuffle()
+    //        print(commentArray)
+    //
+    //        return temporaryCommentArray
+    //
+    //
+    //    }
+    //コメント取り出し
+    //            func shuffle () {
+    //                while commentArray . count > 0 {
+    //                    let index = Int(rand()) % commentArray.count
+    //                    commentArray.append(commentArray[index])
+    //                    commentArray.removeAtIndex(index)
+    //                }
+    //            }
+    
+    
+    
+    func choiceComment() {
+    }
+//commentLabel.text = commentArray[ccount] as? String
+        //         次の while ループに移る前に、「今回使ったセリフ」を選ぶ対象から外す
+        //                    commentArray.removeAtIndex(Index)
+    
+    //
+    
+    //    internal func tapGesture(sender: UITapGestureRecognizer){
+    //
+    
+    //override func viewWillAppear(animated: Bool) {
+    //                    commentArray = saveData.arrayForKey("COMMENT")!
+    //                    shuffle()
+    //                    commentLabel.text = CommentArray[ccount]["comment"] as? String
+    //                }
+    
+    func handleTap(sender: UITapGestureRecognizer){
+        print("Tapped!")
+        
+        let ccount = Int( arc4random_uniform(16) )
+
+       
+        if ccount == 0{
+            commentLabel.text = ""
+        }
+        
+        if(ccount % 2 == 0){
+            commentLabel.text = ""
+        }
+        else{
+            commentLabel.text = commentArray[ccount] [0] as? String
+            
+        }
+    }
+    
+    func handleSwipeUp(sender: UITapGestureRecognizer){
+        print("Swiped up!")
+        commentLabel.text = "おはよう！"
+    }
+    
+    
+    
+    //ToDoViewControllerまで行った時にカレンダー画面まで戻ってくるためのメソッド
+    func calender(segue: UIStoryboardSegue){
         
     }
-
-//スワイプ移動
-    @IBAction func swipePrepareSegue(sender: UISwipeGestureRecognizer) {
-        performSegueWithIdentifier("next", sender: self)
-    }
-
-
-//class ViewController: UIViewController {
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        // Do any additional setup after loading the view, typically from a nib.
-//    }
-//
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//        // Dispose of any resources that can be recreated.
-//    }
-//
-//
-//}
-//
+    
+    
+    
+    //class ViewController: UIViewController {
+    //
+    //    override func viewDidLoad() {
+    //        super.viewDidLoad()
+    //        // Do any additional setup after loading the view, typically from a nib.
+    //    }
+    //
+    //    override func didReceiveMemoryWarning() {
+    //        super.didReceiveMemoryWarning()
+    //        // Dispose of any resources that can be recreated.
+    //    }
+    //
+    //
+    //}
+    //
+    
 }
