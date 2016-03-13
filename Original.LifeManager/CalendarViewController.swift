@@ -304,7 +304,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
         commentArray.append(["右のボタンで来月に変わるよ"])
        
         
-//            commentLabel.text! = ""
+            commentLabel.text! = ""
       
         choiceComment()
         

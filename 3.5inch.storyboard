@@ -246,6 +246,7 @@
                         <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="DAH-1T-lu9"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="todoLabel1" destination="ztg-Lv-hQm" id="yff-8x-2hu"/>
                     </connections>
