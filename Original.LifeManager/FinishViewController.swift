@@ -11,7 +11,7 @@ import UIKit
 class FinishViewController: UIViewController {
     
     @IBOutlet var todoLabel1 : UILabel!
-    @IBOutlet var todoLabel2 : UILabel!
+    
     
     
     var wordArray: [AnyObject] = [] //ユーザデフォルトからとる
@@ -52,6 +52,5 @@ class FinishViewController: UIViewController {
         }
     }
 
-
-
+    
 }

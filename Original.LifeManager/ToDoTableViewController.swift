@@ -166,14 +166,6 @@ class ToDoTableViewController: UITableViewController {
     @IBAction func doButton(seque: UIStoryboardSegue) {
     }
     
-//スワイプ
-   /* @IBAction func swipeSegue(sender: UISwipeGestureRecognizer) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }*/
-    
-//    @IBAction func swipePrepareSegue(sender: UISwipeGestureRecognizer) {
-//        prepareForSegue(<#T##segue: UIStoryboardSegue##UIStoryboardSegue#>, sender: nil)
-//    }
 
     
     let barHeight: CGFloat = UIApplication.sharedApplication().statusBarFrame.size.height
@@ -242,29 +234,6 @@ class ToDoTableViewController: UITableViewController {
         }
     }
 
-//    //各セルの要素を設定する
-//    func ToDotableView(table: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        
-//        // tableCell の ID で UITableViewCell のインスタンスを生成
-////        let cell = table.dequeueReusableCellWithIdentifier("todoCell", forIndexPath: indexPath)
-//        
-//        todolabel.text = String(wordArray[indexPath.row]["todo"] as! String)
-//
-//        // Tag番号 1 で UIImageView インスタンスの生成
-//        let imageView = table.viewWithTag(1) as! UIImageView
-//        
-//        
-//        // Tag番号 ２ で UILabel インスタンスの生成
-//        let label1 = table.viewWithTag(2) as! UILabel
-//        label1.text = "No.\(indexPath.row + 1)"
-//        
-//        // Tag番号 ３ で UILabel インスタンスの生成
-//        let label2 = table.viewWithTag(3) as! UILabel
-//        label2.text = "\(label2Array[indexPath.row])"
-//        
-//        
-//        return cell
-//    }
     
 //    // Cell が選択された場合
 //    func ToDotableView(table: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath) {
@@ -276,5 +245,8 @@ class ToDoTableViewController: UITableViewController {
 //        }
 //        
 //    }
-    
+    func plusbutton(segue: UIStoryboardSegue){
+        
+    }
+
 }

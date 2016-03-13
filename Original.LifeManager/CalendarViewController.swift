@@ -48,10 +48,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
     var commentArray = [AnyObject]()
     var ccount = Int(rand() % 16)
     
-//        var commentArray: [AnyObject] = [] //ユーザーデフォルトからとる配列
-    
-    
-    
+
     //カレンダーの位置決め用メンバ変数
     
     var calendarLabelIntervalX: Int!
@@ -70,8 +67,6 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
     var calendarSize: Int!
     var calendarFontSize: Int!
     
-    
-    //    let saveData = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -290,29 +285,6 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
         
         
         //とどくん喋らせるよう///////////
-        //var commentArray = [AnyObject] () //[""]
-        //    var CommentArray: [AnyObject] = []
-        /////////////////////////////
-//                var commentArray = [
-//                "ToDoListを見てみよう"
-//                ,"The Sky is the limit!"
-//                ,"今日は何の日？"
-//                ,"大安の日は結婚式が多いよ"
-//                ,"２月２９日は四年に一度しか来ないよ"
-//                ,"体調管理は大事だよ〜"
-//                ,"宿題は終わった？"
-//                ,"今日はデート？？？"
-//                ,"僕はトドだよ"
-//                ,"おはよう"
-//                ,"ToDoの追加はリストの右上のボタン！"
-//                ,"いい天気だねー"
-//                ,"It's nice to take a break."
-//                ,"Let's make it happen."
-//                ,"Think simply."
-//                ,"Dreams come true."
-//                ,"TGIF!!!"]
-
-//        var commentArray = [AnyObject] ()
         commentArray.append(["ToDoListを見てみよう"])
         commentArray.append(["The Sky is the limit!"])
         commentArray.append(["今日は何の日？"])
@@ -332,16 +304,8 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
         commentArray.append(["右のボタンで来月に変わるよ"])
        
         
-            commentLabel.text = ""
-        
-        
-//        while (commentArray.count > 0) {
-//            let index = Int(arc4random_uniform(UInt32(commentArray.count)))
-//            commentArray.append(commentArray[index])
-////            commentArray.removeAtIndex(index)
-//        }
-
-        
+//            commentLabel.text! = ""
+      
         choiceComment()
         
     }   ///////////ViewDidload終わり//////////////////
@@ -407,7 +371,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
             }else{
                 
                 calendarBackGroundColor = UIColor.lightGrayColor()
-                //
+                
             }
             
             
@@ -562,17 +526,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
     func getNextMonthData(sender: UIButton) {
         nextCalendarSettings()
     }
-    //左スワイプで前月を表示
-    //    @IBAction func swipePrevCalendar(sender: UISwipeGestureRecognizer) {
-    //        prevCalendarSettings()
-    //    }
-    
-    //右スワイプで次月を表示
-    //    @IBAction func swipeNextCalendar(sender: UISwipeGestureRecognizer) {
-    //        nextCalendarSettings()
-    //        //prepareForSegue("", sender: nil)
-    //    }
-    
+
     //前月を表示するメソッド
     func prevCalendarSettings() {
         removeCalendarButtonObject()
@@ -595,10 +549,6 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
-    //            }
-    
     
     
     func choiceComment() {
@@ -634,27 +584,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
     
     
     
-    //ToDoViewControllerまで行った時にカレンダー画面まで戻ってくるためのメソッド
-    func calender(segue: UIStoryboardSegue){
-        
-    }
     
     
-    
-    //class ViewController: UIViewController {
-    //
-    //    override func viewDidLoad() {
-    //        super.viewDidLoad()
-    //        // Do any additional setup after loading the view, typically from a nib.
-    //    }
-    //
-    //    override func didReceiveMemoryWarning() {
-    //        super.didReceiveMemoryWarning()
-    //        // Dispose of any resources that can be recreated.
-    //    }
-    //
-    //
-    //}
-    //
     
 }
