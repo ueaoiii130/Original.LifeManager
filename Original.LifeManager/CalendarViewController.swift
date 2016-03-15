@@ -559,7 +559,6 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
          ccount = Int(rand() % 16)
     
 
-    
         if(ccount % 2 == 0){
             commentLabel.text = ""
         }
@@ -575,16 +574,9 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
     }
 
 
-
-
     func handleSwipeUp(sender: UITapGestureRecognizer){
         print("Swiped up!")
         commentLabel.text = "おはよう！"
     }
-    
-    
-    
-    
-    
     
 }
