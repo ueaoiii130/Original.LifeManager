@@ -117,6 +117,7 @@ class ToDoTableViewController: UITableViewController {
         //wordArrayの保存を行う
         saveData.setObject(wordArray, forKey: "WORD")
         
+        
     }
     //編集ボタンを出す
     override func setEditing(editing: Bool, animated: Bool) {
@@ -183,7 +184,7 @@ class ToDoTableViewController: UITableViewController {
     //    for in文で配列の数だけチェックボックス表示
     func checked(sender:CTCheckbox) {
         var selected: [Bool] = []
-        for i in 0 ..< wordArray.count {
+        for _ in 0 ..< wordArray.count {
             selected.append(false)
         }
         

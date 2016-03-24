@@ -14,7 +14,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(application: UIApplication, didFini
+        shLaunchingWithOptions, launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let storyboard: UIStoryboard = StoryboardHelper.adjust()
         window!.rootViewController = storyboard.instantiateInitialViewController()! as UIViewController

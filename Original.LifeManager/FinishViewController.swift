@@ -30,6 +30,7 @@ class FinishViewController: UIViewController {
     //Viewが現れた時に出てくる
     override func viewWillAppear(animated: Bool){
         if saveData.arrayForKey("WORD") != nil {
+            
             wordArray = saveData.arrayForKey("WORD")!
         }
         
