@@ -13,12 +13,11 @@ class AddViewController: UIViewController,UITextFieldDelegate  {
     
 //使うものたち宣言
     @IBOutlet var ToDoTextField: UITextField!
-//    var task: ToDo? = nil
+
     @IBOutlet var MemoTextField: UITextField!
     
     @IBOutlet var DateTextField: UITextField!
     
-    @IBOutlet var DatePicker: UIDatePicker!
 
     
    

@@ -37,7 +37,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
     @IBOutlet var prevMonthButton: UIButton!
     @IBOutlet var nextMonthButton: UIButton!
     
-    @IBOutlet var ToDoListButton: UIButton!
+    
     
     @IBOutlet weak var ToDokun: UIImageView!
     
@@ -550,7 +550,7 @@ class ViewController: UIViewController,UIGestureRecognizerDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    
+//とどくん喋らせる
     func choiceComment() {
     }
     

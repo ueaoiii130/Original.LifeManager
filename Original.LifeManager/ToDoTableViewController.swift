@@ -83,10 +83,7 @@ class ToDoTableViewController: UITableViewController {
         cell.MemoLabel.text = nowIndexPathDictionary["memo"] as? String
         cell.DateLabel.text = nowIndexPathDictionary["date"] as? String
         
-//もともと
-//        cell.ToDoLabel?.text = String(wordArray[indexPath.row]["ToDo"])
-//        cell.MemoLabel?.text = String(wordArray[indexPath.row]["Memo"])
-//        cell.DateLabel?.text = String(wordArray[indexPath.row]["Date"])
+
 
         //チェックボックスのタグ
         cell.checkbox.tag = indexPath.row
@@ -115,7 +112,8 @@ class ToDoTableViewController: UITableViewController {
         wordArray.removeAtIndex(indexPath.row)
         tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         //wordArrayの保存を行う
-        saveData.setObject(wordArray, forKey: "WORD")
+        saveData.removeObjectForKey ("WORD")
+//        saveData.setObject(wordArray, forKey: "WORD")
         
         
     }
@@ -145,25 +143,13 @@ class ToDoTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
-    
-    //    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    //        // #warning Incomplete implementation, return the number of sections
-    //        return 0
-    //    }
-    
-    //    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //        // #warning Incomplete implementation, return the number of rows
-    //        return 0
-    //    }
-    
     
     //ボタンを押した時の移動
     @IBAction func plusButton(seque: UIStoryboardSegue) {
     }
-    @IBAction func backButton(){
-        navigationController?.popToRootViewControllerAnimated(true)
-    }
+//    @IBAction func backButton(){
+//        navigationController?.popToRootViewControllerAnimated(true)
+//    }
     @IBAction func doButton(seque: UIStoryboardSegue) {
     }
     
@@ -171,16 +157,9 @@ class ToDoTableViewController: UITableViewController {
     
     let barHeight: CGFloat = UIApplication.sharedApplication().statusBarFrame.size.height
     
-    //            let displayWidth = self.view.frame.width
-    //            let displayHeight = self.view.frame.height
-    
-    //            tableView = UITableView(frame: CGRect(x:0, y:barHeight, width:displayWidth, height:displayHeight - barHeight))
-    //
-    //            tableView.registerClass(CustomTableViewCell.self, forCellReuseIdentifier: "todoCell")
     
     
-    //
-    // セルの選択状態を保持します
+      // セルの選択状態を保持します
     //    for in文で配列の数だけチェックボックス表示
     func checked(sender:CTCheckbox) {
         var selected: [Bool] = []

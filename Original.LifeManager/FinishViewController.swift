@@ -25,6 +25,8 @@ class FinishViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+            todoLabel1?.text = ""
+        
         
     }
     //Viewが現れた時に出てくる
@@ -32,12 +34,14 @@ class FinishViewController: UIViewController {
         if saveData.arrayForKey("WORD") != nil {
             
             wordArray = saveData.arrayForKey("WORD")!
+            shuffle()
+            todoLabel1!.text = shuffledWordArray[nowNumber]["todo"]as? String
         }
         
-        wordArray = saveData.arrayForKey("WORD")!
-        shuffle()
+//        wordArray = saveData.arrayForKey("WORD")!
+//        shuffle()
         
-        todoLabel1!.text = shuffledWordArray[nowNumber]["todo"]as? String
+//        todoLabel1!.text = shuffledWordArray[nowNumber]["todo"]as? String
             }
 
     override func didReceiveMemoryWarning() {
